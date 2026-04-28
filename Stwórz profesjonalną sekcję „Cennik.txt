@@ -1,0 +1,191 @@
+Stwórz profesjonalną sekcję „Cennik / Oferta” dla strony internetowej firmy HANDYBIZ.
+
+Firma:
+HANDYBIZ
+
+Slogan:
+„Twoje problemy. Nasze rozwiązania.”
+
+Styl:
+premium, nowoczesny consulting B2B, czarne tło, biały tekst, minimalistyczny wygląd, bardzo profesjonalny układ sprzedażowy.
+
+Sekcja ma wyglądać jak premium pricing section dla firmy konsultingowej, nie jak tani cennik usług.
+
+--------------------------------------------------
+
+TYTUŁ SEKCJI:
+
+Oferta współpracy
+
+Podtytuł:
+
+Wybierz model współpracy dopasowany do potrzeb Twojej firmy.
+Od pierwszej diagnozy problemu po pełne wdrożenie rozwiązania.
+
+Krótki opis:
+
+Nie sprzedajemy pojedynczych usług.
+Pomagamy rozwiązywać realne problemy biznesowe i wdrażać rozwiązania, które przynoszą efekty.
+
+--------------------------------------------------
+
+PAKIET 1 — DARMOWA KONSULTACJA
+
+Nazwa:
+Pierwsza konsultacja
+
+Cena:
+0 zł
+
+Opis:
+
+Bezpłatne spotkanie online, podczas którego poznajemy Twoją firmę, obecne wyzwania oraz główne problemy wymagające rozwiązania.
+
+Zakres:
+
+- analiza podstawowej sytuacji firmy
+- omówienie głównych problemów
+- wstępna ocena możliwości współpracy
+- określenie potencjalnych kierunków działania
+- rekomendacja kolejnych kroków
+
+Czas:
+15–30 minut
+
+CTA:
+Umów bezpłatną konsultację
+
+Dodatkowa informacja:
+Pierwsze spotkanie ma charakter poznawczy i diagnostyczny.
+
+--------------------------------------------------
+
+PAKIET 2 — DIAGNOZA BIZNESOWA (BESTSELLER)
+
+Oznaczenie:
+Najczęściej wybierane
+
+Nazwa:
+Sesja diagnozy biznesu
+
+Cena:
+od 990 zł
+
+Opis:
+
+Szczegółowa analiza firmy, identyfikacja problemów oraz przygotowanie konkretnych rozwiązań i planu działania.
+
+To najważniejszy etap współpracy, który pozwala znaleźć realne blokady wzrostu i wskazać najlepszą drogę rozwoju.
+
+Zakres:
+
+- pełna analiza sytuacji firmy
+- identyfikacja problemów i strat
+- wykrycie blokad wzrostu
+- analiza sprzedaży i procesów
+- ocena marketingu i operacji
+- rekomendacje działań
+- możliwe scenariusze wdrożenia
+- plan dalszej współpracy
+
+Czas:
+60–90 minut
+
+CTA:
+Umów sesję diagnozy
+
+Dodatkowa informacja:
+Najczęściej wybierana usługa przez właścicieli firm.
+
+--------------------------------------------------
+
+PAKIET 3 — WDROŻENIE I REALIZACJA
+
+Nazwa:
+Strategia + wdrożenie
+
+Cena:
+od 2500 zł
+
+Opis:
+
+Kompleksowe wdrożenie wybranego rozwiązania – od strategii po finalny efekt biznesowy.
+
+Zakres:
+
+- dobór odpowiednich narzędzi i rozwiązań
+- kontakt z wykonawcami i partnerami
+- organizacja procesu wdrożenia
+- nadzór nad realizacją projektu
+- koordynacja działań
+- wsparcie decyzyjne
+- finalizacja wdrożenia
+
+Przykłady:
+
+- wdrożenie CRM
+- automatyzacje AI
+- system sprzedaży
+- procesy operacyjne
+- marketing performance
+- rozwiązania technologiczne
+
+CTA:
+Zapytaj o wdrożenie
+
+--------------------------------------------------
+
+PAKIET 4 — STAŁA OPIEKA BIZNESOWA
+
+Nazwa:
+Business Partner
+
+Cena:
+od 1500 zł / miesiąc
+
+Opis:
+
+Stałe doradztwo i bieżące wsparcie strategiczne dla właścicieli firm, którzy chcą mieć partnera do rozwoju biznesu.
+
+Zakres:
+
+- regularne konsultacje
+- bieżące rozwiązywanie problemów
+- wsparcie strategiczne
+- analiza decyzji biznesowych
+- optymalizacja działań firmy
+- rozwój sprzedaży i operacji
+
+CTA:
+Porozmawiaj o współpracy
+
+--------------------------------------------------
+
+SEKCJA DODATKOWA
+
+Nagłówek:
+
+Nie wiesz, czego dokładnie potrzebujesz?
+
+Opis:
+
+To normalne.
+Większość klientów nie przychodzi po konkretną usługę — przychodzi z problemem.
+
+Naszym zadaniem jest znaleźć najlepsze rozwiązanie.
+
+Dlatego pierwsza konsultacja jest bezpłatna.
+
+CTA:
+Zacznij od rozmowy
+
+--------------------------------------------------
+
+WAŻNE ZASADY:
+
+- sekcja ma wyglądać premium i ekskluzywnie
+- pakiet „Sesja diagnozy biznesu” ma być wyraźnie wyróżniony jako bestseller
+- układ ma budować zaufanie i wysoką wartość usług
+- nie ma wyglądać jak zwykły tani cennik
+- ma wyglądać jak oferta premium consulting
+- klient ma od razu rozumieć, że kupuje rozwiązanie problemu, nie pojedynczą usługę
