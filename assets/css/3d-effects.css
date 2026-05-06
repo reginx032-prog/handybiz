@@ -108,6 +108,71 @@ body.has-3d-bg #canvas-bg { display: none !important; }
   }
 }
 
+/* ─── SCROLL-DRIVEN 3D REVEALS ─────────────────────────────── */
+@media (pointer: fine) and (min-width: 769px) {
+
+  .scroll-3d {
+    opacity: 0;
+    transform: perspective(1400px) rotateX(16deg) translateY(56px);
+    transform-origin: center bottom;
+    transition:
+      opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+  }
+
+  .scroll-3d.scroll-3d-in {
+    opacity: 1;
+    transform: perspective(1400px) rotateX(0deg) translateY(0);
+    will-change: auto;
+  }
+}
+
+/* ─── CONIC GRADIENT CTA — futurystyczny pierścień na hover ── */
+@media (pointer: fine) and (min-width: 769px) {
+
+  .btn-primary {
+    position: relative;
+    isolation: isolate;
+  }
+
+  /* Pierścień conic — siedzi za guzikiem, wystaje 3px ze wszystkich stron.
+     Blur miękko rozmywa go w aurę. Animacja pauzuje gdy nie ma hover. */
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: calc(var(--r) + 3px);
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      rgba(232, 204, 150, 0.0) 5%,
+      rgba(232, 204, 150, 0.85) 22%,
+      rgba(232, 204, 150, 0.0) 42%,
+      rgba(232, 204, 150, 0.0) 58%,
+      rgba(232, 204, 150, 0.85) 78%,
+      rgba(232, 204, 150, 0.0) 95%
+    );
+    filter: blur(3px);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    animation: btnConicSpin 3.4s linear infinite;
+    animation-play-state: paused;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .btn-primary:hover::before {
+    opacity: 0.95;
+    animation-play-state: running;
+  }
+
+  @keyframes btnConicSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+}
+
 /* ─── REDUCED MOTION + MOBILE: wyłącz wszystko ─── */
 @media (prefers-reduced-motion: reduce), (pointer: coarse), (max-width: 768px) {
   #canvas-3d { display: none !important; }
@@ -120,4 +185,10 @@ body.has-3d-bg #canvas-bg { display: none !important; }
     transform: none !important;
   }
   .tilt-3d::after { display: none !important; }
+  .scroll-3d {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .btn-primary::before { display: none !important; }
 }

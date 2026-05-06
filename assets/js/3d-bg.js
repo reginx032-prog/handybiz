@@ -122,6 +122,25 @@
   const points = new THREE.Points(pointsGeo, pointsMat);
   scene.add(points);
 
+  // ── Wireframe globe (subtelny, w głębi sceny) ──
+  // Lat/lon siatka (32×18) → klasyczny "biz-globe" look.
+  // Niska opacity + additive blending = nie konkuruje z hero,
+  // ale daje punkt skupienia i głębię.
+  const globeGeo = new THREE.SphereGeometry(220, 32, 18);
+  const globeWire = new THREE.WireframeGeometry(globeGeo);
+  const globe = new THREE.LineSegments(
+    globeWire,
+    new THREE.LineBasicMaterial({
+      color: 0xc8a96e,
+      transparent: true,
+      opacity: 0.14,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    })
+  );
+  globe.position.set(0, 0, -260);
+  scene.add(globe);
+
   // ── Lines (połączenia bliskich punktów) ──
   const MAX_LINES = 900;
   const linePositions = new Float32Array(MAX_LINES * 2 * 3);
@@ -173,6 +192,10 @@
     // Powolny obrót sceny (Y)
     points.rotation.y += 0.00035;
     lines.rotation.y = points.rotation.y;
+
+    // Globe: szybszy obrót Y + delikatne kołysanie X (jak nutacja)
+    globe.rotation.y += 0.0014;
+    globe.rotation.x = Math.sin(performance.now() * 0.00012) * 0.18;
 
     // Update positions
     const pos = pointsGeo.attributes.position.array;
