@@ -45,6 +45,9 @@
   <meta name="twitter:image" content="https://www.handybiz.pl/handybiz-mark-preview-right.png">
   <meta name="twitter:image:alt" content="HANDYBIZ — partner w rozwoju Twojej firmy">
 
+  <!-- ── 3D EFFECTS (eksperyment) ── -->
+  <link rel="stylesheet" href="assets/css/3d-effects.css">
+
   <!-- ── FONTS ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -4623,5 +4626,13 @@ form?.addEventListener('submit', async e => {
   }
 });
 </script>
+
+<!-- ── 3D EFFECTS — eksperyment futurystyczny ──
+     Wszystkie 3 skrypty same sprawdzają (pointer:fine), (min-width:769px)
+     i prefers-reduced-motion. Na mobile/touch po prostu robią early-return,
+     a JS i tak parsuje się asynchronicznie (type="module" implies defer). -->
+<script type="module" src="assets/js/3d-bg.js"></script>
+<script type="module" src="assets/js/hero-tilt.js"></script>
+<script type="module" src="assets/js/card-tilt.js"></script>
 </body>
 </html>
