@@ -2434,55 +2434,6 @@
     .footer-copy { font-size: 0.75rem; color: var(--dim); }
 
     /* ── RESPONSIVE ── */
-    /* ── #OFERTA-PARTNER RESPONSYWNOŚĆ ──
-       Problem 1 (tablet 768-1100px): .bp-tiers ma 3 kolumny wewnątrz
-         jednokolumnowego oblock-body → karty ~200px wide.
-         Fix: 2 kolumny na tablecie, 1 kolumna na małym tablecie.
-       Problem 2 (mobile ≤768px): overflow:hidden na .oblock obcina
-         scroll-container; padding oblock-right powoduje że karty (vw-based)
-         są szersze niż kontener → overflow/clip.
-         Fix: zdjąć h-padding z oblock-right, dodać do bp-tiers jako padding,
-         użyć container-relative szerokości kart.
-    */
-    @media (max-width: 1100px) {
-      #oferta-partner .bp-tiers {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 900px) {
-      #oferta-partner .bp-tiers {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (max-width: 768px) {
-      /* Zdejmujemy h-padding z oblock-right i przenosimy do bp-tiers,
-         żeby scroll-container mógł "oddychać" i karty nie wychodziły poza */
-      #oferta-partner .oblock-right {
-        padding-left: 0;
-        padding-right: 0;
-      }
-      #oferta-partner .bp-tiers {
-        padding: 0 20px 10px;
-        gap: 14px;
-      }
-      /* Karta: container-relative (calc oparty na vw - outer padding - bp-tiers padding)
-         Wzór: 100vw - 2*20px (container) - 2*20px (bp-tiers) - 2px (border) = 100vw - 82px */
-      #oferta-partner .bp-tier {
-        flex: 0 0 min(calc(100vw - 82px), 340px);
-        max-width: 340px;
-      }
-    }
-    @media (max-width: 540px) {
-      #oferta-partner .bp-tiers {
-        padding: 0 16px 10px;
-      }
-      /* 100vw - 2*16px (container) - 2*16px (bp-tiers) = 100vw - 64px */
-      #oferta-partner .bp-tier {
-        flex: 0 0 min(calc(100vw - 64px), 320px);
-        max-width: 320px;
-      }
-    }
-
     @media (max-width: 1100px) {
       .service-showcase { width: 100%; }
       .service-showcase-head { max-width: none; }
@@ -2506,10 +2457,12 @@
       .wwd-inner { grid-template-columns: 1fr; gap: 56px; }
       .oblock-body { grid-template-columns: 1fr; }
       #pakiety .oblock-body { grid-template-columns: 1fr; }
-      .oblock-left { border-right: none; border-bottom: 1px solid var(--border); padding: 36px 40px; }
-      .oblock-right { padding: 36px 40px; }
+      .oblock-left { border-right: none; border-bottom: 1px solid var(--border); padding: 36px 40px; min-width: 0; }
+      .oblock-right { padding: 36px 40px; min-width: 0; }
       #pakiety .oblock-right { overflow: visible; }
       .oblock-top { padding: 36px 40px 28px; }
+      /* Partner: 2-kolumnowy grid kart na tablecie */
+      #oferta-partner .bp-tiers { grid-template-columns: repeat(2, 1fr); gap: 14px; }
       .steps { grid-template-columns: repeat(2, 1fr); gap: 48px; }
       .steps::before { display: none; }
       .effects-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2532,21 +2485,19 @@
       .footer-socials { justify-content: center; }
       .problems-grid { grid-template-columns: 1fr; }
       .bp-tiers { grid-template-columns: 1fr; }
+      /* Partner: 1-kolumnowy grid na mobile (prosty stack, bez carousel) */
       #oferta-partner .bp-tiers {
-        display: flex;
-        gap: 16px;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        touch-action: pan-x pan-y;
-        padding-bottom: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        overflow: visible;
       }
       #oferta-partner .bp-tier {
-        flex: 0 0 min(86vw, 360px);
-        scroll-snap-align: start;
+        flex: unset;
+        width: 100%;
+        scroll-snap-align: none;
       }
+      #oferta-partner .oblock-right { padding: 26px 24px; }
       .bp-tier-detail { padding: 24px 22px; }
       .bp-detail-top { align-items: flex-start; }
       .bp-detail-list { grid-template-columns: 1fr; }
@@ -2655,6 +2606,7 @@
     @media (max-width: 540px) {
       section { padding: 64px 0; }
       .container { padding: 0 16px; }
+      #oferta-partner .oblock-right { padding: 20px 16px; }
       h2.title { font-size: clamp(1.85rem, 8.5vw, 2.6rem); }
       .label { font-size: 0.62rem; }
       .sub { font-size: 0.95rem; }
