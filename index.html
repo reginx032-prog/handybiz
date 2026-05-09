@@ -1756,6 +1756,7 @@
       cursor: pointer;
       overflow: hidden;
     }
+    #oferta-partner .bp-tier { cursor: default; }
     #pakiety .bp-tier {
       min-height: 100%;
       flex: 0 0 100%;
@@ -3284,19 +3285,8 @@
             <div class="oblock-right">
               <div class="oblock-service-title">Partner Biznesowy</div>
               <div class="oblock-scope-lbl">Wybierz pakiet</div>
-              <div class="bp-tier-detail" id="bp-tier-detail" aria-live="polite">
-                <div class="bp-detail-top">
-                  <div>
-                    <div class="bp-detail-name" id="bp-detail-name"></div>
-                    <div class="bp-detail-price" id="bp-detail-price"></div>
-                    <div class="bp-detail-period" id="bp-detail-period"></div>
-                  </div>
-                  <button class="bp-detail-close" type="button" aria-label="Zamknij podgląd pakietu">×</button>
-                </div>
-                <ul class="bp-detail-list" id="bp-detail-list"></ul>
-              </div>
               <div class="bp-tiers">
-                <div class="bp-tier" tabindex="0" role="button" aria-label="Pokaż pakiet Support BIZ">
+                <div class="bp-tier">
                   <div class="bp-tier-name">Support BIZ</div>
                   <div class="bp-tier-price">od 1 790 zł</div>
                   <div class="bp-tier-period">netto / miesiąc</div>
@@ -3308,7 +3298,7 @@
                     <li>Niższe ceny usług automatyzacyjnych dla stałych klientów</li>
                   </ul>
                 </div>
-                <div class="bp-tier featured" tabindex="0" role="button" aria-label="Pokaż pakiet Growth BIZ">
+                <div class="bp-tier featured">
                   <div class="bp-tier-badge">Bestseller</div>
                   <div class="bp-tier-name">Growth BIZ</div>
                   <div class="bp-tier-price">od 2 990 zł</div>
@@ -3322,7 +3312,7 @@
                     <li>Niższe ceny automatyzacji, integracji i dodatkowych wdrożeń</li>
                   </ul>
                 </div>
-                <div class="bp-tier" tabindex="0" role="button" aria-label="Pokaż pakiet Partner BIZ">
+                <div class="bp-tier">
                   <div class="bp-tier-name">Partner BIZ</div>
                   <div class="bp-tier-price">od 4 490 zł</div>
                   <div class="bp-tier-period">netto / miesiąc</div>
@@ -4443,66 +4433,6 @@ enableSwipe(storyTrack?.closest('.story-slider'), {
   onPrev: () => showStorySlide(storyIndex - 1),
 });
 
-const bpDetail = document.getElementById('bp-tier-detail');
-const bpDetailName = document.getElementById('bp-detail-name');
-const bpDetailPrice = document.getElementById('bp-detail-price');
-const bpDetailPeriod = document.getElementById('bp-detail-period');
-const bpDetailList = document.getElementById('bp-detail-list');
-const bpDetailClose = document.querySelector('.bp-detail-close');
-const bpTiers = document.querySelectorAll('#oferta-partner .bp-tier');
-const bpTierSlider = document.querySelector('#oferta-partner .bp-tiers');
-
-function scrollBpTierSlider(direction) {
-  if (!bpTierSlider) return;
-  const slide = bpTierSlider.querySelector('.bp-tier');
-  const gap = parseFloat(getComputedStyle(bpTierSlider).columnGap) || 16;
-  const slideWidth = slide ? slide.getBoundingClientRect().width + gap : bpTierSlider.clientWidth;
-  bpTierSlider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
-}
-
-enableSwipe(bpTierSlider, {
-  onNext: () => scrollBpTierSlider(1),
-  onPrev: () => scrollBpTierSlider(-1),
-  threshold: 38,
-});
-
-bpTiers.forEach(tier => {
-  const selectTier = () => {
-    const isSelected = tier.classList.contains('selected');
-    bpTiers.forEach(el => el.classList.remove('selected'));
-
-    if (isSelected) {
-      bpDetail?.classList.remove('open');
-      return;
-    }
-
-    tier.classList.add('selected');
-    if (!bpDetail) return;
-
-    bpDetailName.textContent = tier.querySelector('.bp-tier-name')?.textContent || '';
-    bpDetailPrice.textContent = tier.querySelector('.bp-tier-price')?.textContent || '';
-    bpDetailPeriod.textContent = tier.querySelector('.bp-tier-period')?.textContent || '';
-    bpDetailList.innerHTML = '';
-    tier.querySelectorAll('.bp-tier-list li').forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = item.textContent;
-      bpDetailList.appendChild(li);
-    });
-    bpDetail.classList.add('open');
-  };
-
-  tier.addEventListener('click', selectTier);
-  tier.addEventListener('keydown', e => {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    e.preventDefault();
-    selectTier();
-  });
-});
-
-bpDetailClose?.addEventListener('click', () => {
-  bpTiers.forEach(el => el.classList.remove('selected'));
-  bpDetail?.classList.remove('open');
-});
 
 /* ── TECHNICAL PACKAGE TIERS ── */
 const pkgDetail = document.getElementById('pkg-tier-detail');
