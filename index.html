@@ -193,70 +193,138 @@
 
     /* ── SWIPE ARROWS (mobile carousels) ── */
 
-    /* #pakiety: strzałki istnieją w HTML, ale są ukryte na ≤540px.
-       Odblokowanie + styl overlay na krawędziach slidera. */
-    @media (max-width: 540px) {
-      .pkg-slider-btn {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 30px;
-        font-size: 1.3rem;
-        background: rgba(8,8,8,0.82);
-        border: 1px solid rgba(200,169,110,0.38);
-        color: var(--accent);
-        border-radius: 6px;
-        top: 40%;
-        opacity: 0.9;
-        z-index: 5;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.35);
-      }
-      .pkg-slider-btn.prev { left: 2px; }
-      .pkg-slider-btn.next { right: 2px; }
+    /* ── WSPÓLNY STYL STRZAŁEK KARUZELI ── */
+    .swipe-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid rgba(200,169,110,0.42);
+      background: rgba(14,14,14,0.92);
+      color: var(--accent);
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.32);
+      transition: background var(--t), border-color var(--t), transform 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+      flex-shrink: 0;
+    }
+    .swipe-arrow:active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+      transform: scale(0.93);
     }
 
-    /* #oferta-partner: nowe strzałki swipe — widoczne tylko na mobile.
-       Na desktopie ukryte (karty są w gridzie, swipe nie ma sensu). */
-    .bp-swipe-wrap {
-      position: relative;
-    }
-    .bp-swipe-btn {
-      display: none; /* domyślnie ukryte na desktopie */
+    /* Rząd ze strzałkami — pojawia się POD karuzelą */
+    .swipe-controls {
+      display: none; /* ukryty na desktopie */
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 16px;
     }
     @media (max-width: 768px) {
-      .bp-swipe-btn {
-        display: flex;
+      .swipe-controls { display: flex; }
+    }
+
+    /* #pakiety: strzałki są w HTML (absolute na desktop), na mobile
+       wychodzą z flow i siadają w gridzie POD sliderarem.
+       HTML order: .prev | #pkg-slider | .next
+       Grid: slider zajmuje oba kolumny, prev/next obok siebie w rzędzie 2. */
+    @media (max-width: 540px) {
+      .pkg-slider-wrap {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 42px 1fr 42px;
+        grid-template-rows: auto 42px;
+        gap: 12px 10px;
+        align-items: center;
+      }
+      #pkg-slider {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
+      .pkg-slider-btn {
+        display: inline-flex !important;
         align-items: center;
         justify-content: center;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 5;
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-        border: 1px solid rgba(200,169,110,0.38);
-        background: rgba(8,8,8,0.82);
+        position: static !important;
+        transform: none !important;
+        width: 42px;
+        height: 42px;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        border: 1px solid rgba(200,169,110,0.42);
+        background: rgba(14,14,14,0.92);
+        color: var(--accent);
+        box-shadow: 0 4px 18px rgba(0,0,0,0.32);
+        transition: background var(--t), border-color var(--t), transform 0.15s ease;
+        -webkit-tap-highlight-color: transparent;
+        grid-row: 2;
+        justify-self: center;
+      }
+      .pkg-slider-btn.prev { grid-column: 1; }
+      .pkg-slider-btn.next { grid-column: 3; }
+      .pkg-slider-btn:active {
+        background: var(--accent) !important;
+        color: #000 !important;
+        border-color: var(--accent) !important;
+        transform: scale(0.93) !important;
+      }
+    }
+
+    /* #oferta-partner: nowe strzałki .bp-swipe-btn —
+       ukryte na desktopie (grid 3 kol.), widoczne pod karuzelą na mobile.
+       HTML order: .bp-swipe-prev | .bp-tiers | .bp-swipe-next
+       Grid: tiers pełna szerokość w rzędzie 1, prev/next obok w rzędzie 2. */
+    .bp-swipe-wrap { position: relative; }
+    .bp-swipe-btn  { display: none; }
+
+    @media (max-width: 768px) {
+      .bp-swipe-wrap {
+        display: grid;
+        grid-template-columns: 42px 1fr 42px;
+        grid-template-rows: auto 42px;
+        gap: 12px 10px;
+        align-items: center;
+      }
+      .bp-tiers {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
+      .bp-swipe-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        border: 1px solid rgba(200,169,110,0.42);
+        background: rgba(14,14,14,0.92);
         color: var(--accent);
         font-size: 1.5rem;
         font-weight: 900;
         line-height: 1;
         cursor: pointer;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.35);
-        transition: background var(--t), border-color var(--t), transform var(--t);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
+        box-shadow: 0 4px 18px rgba(0,0,0,0.32);
+        transition: background var(--t), border-color var(--t), transform 0.15s ease;
+        -webkit-tap-highlight-color: transparent;
+        grid-row: 2;
+        justify-self: center;
       }
-      .bp-swipe-btn:hover,
+      .bp-swipe-prev { grid-column: 1; }
+      .bp-swipe-next { grid-column: 3; }
       .bp-swipe-btn:active {
         background: var(--accent);
         color: #000;
         border-color: var(--accent);
-        transform: translateY(-50%) scale(1.08);
+        transform: scale(0.93);
       }
-      .bp-swipe-prev { left: -4px; }
-      .bp-swipe-next { right: -4px; }
     }
 
     /* ── NAV ── */
