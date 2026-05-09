@@ -191,6 +191,74 @@
       }
     }
 
+    /* ── SWIPE ARROWS (mobile carousels) ── */
+
+    /* #pakiety: strzałki istnieją w HTML, ale są ukryte na ≤540px.
+       Odblokowanie + styl overlay na krawędziach slidera. */
+    @media (max-width: 540px) {
+      .pkg-slider-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        font-size: 1.3rem;
+        background: rgba(8,8,8,0.82);
+        border: 1px solid rgba(200,169,110,0.38);
+        color: var(--accent);
+        border-radius: 6px;
+        top: 40%;
+        opacity: 0.9;
+        z-index: 5;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      }
+      .pkg-slider-btn.prev { left: 2px; }
+      .pkg-slider-btn.next { right: 2px; }
+    }
+
+    /* #oferta-partner: nowe strzałki swipe — widoczne tylko na mobile.
+       Na desktopie ukryte (karty są w gridzie, swipe nie ma sensu). */
+    .bp-swipe-wrap {
+      position: relative;
+    }
+    .bp-swipe-btn {
+      display: none; /* domyślnie ukryte na desktopie */
+    }
+    @media (max-width: 768px) {
+      .bp-swipe-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 5;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        border: 1px solid rgba(200,169,110,0.38);
+        background: rgba(8,8,8,0.82);
+        color: var(--accent);
+        font-size: 1.5rem;
+        font-weight: 900;
+        line-height: 1;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+        transition: background var(--t), border-color var(--t), transform var(--t);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+      .bp-swipe-btn:hover,
+      .bp-swipe-btn:active {
+        background: var(--accent);
+        color: #000;
+        border-color: var(--accent);
+        transform: translateY(-50%) scale(1.08);
+      }
+      .bp-swipe-prev { left: -4px; }
+      .bp-swipe-next { right: -4px; }
+    }
+
     /* ── NAV ── */
     nav {
       position: fixed;
@@ -3298,6 +3366,9 @@
                 </div>
                 <ul class="bp-detail-list" id="bp-detail-list"></ul>
               </div>
+              <div class="bp-swipe-wrap">
+                <button class="bp-swipe-btn bp-swipe-prev" type="button" aria-label="Poprzedni pakiet" onclick="scrollBpTierSlider(-1)">&#8249;</button>
+                <button class="bp-swipe-btn bp-swipe-next" type="button" aria-label="Następny pakiet" onclick="scrollBpTierSlider(1)">&#8250;</button>
               <div class="bp-tiers">
                 <div class="bp-tier" tabindex="0" role="button" aria-label="Pokaż pakiet Support BIZ">
                   <div class="bp-tier-name">Support BIZ</div>
@@ -3340,6 +3411,7 @@
                   </ul>
                 </div>
               </div>
+              </div><!-- /bp-swipe-wrap -->
               <div class="bp-price-note">Ceny są orientacyjne i mogą ulec zmianie w zależności od wymagań klienta, zakresu współpracy oraz ewentualnej dodatkowej pracy po naszej stronie.</div>
               <a href="#kontakt" class="btn btn-ghost btn-sm" style="width:100%; justify-content:center;">Porozmawiaj o współpracy</a>
             </div>
