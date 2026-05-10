@@ -18,9 +18,10 @@
   <link rel="canonical" href="https://handybiz.pl/">
 
   <!-- ── FAVICON ── -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" href="handybiz-mark-cut.png">
   <link rel="apple-touch-icon" href="handybiz-mark-cut.png">
-  <link rel="shortcut icon" href="handybiz-mark-cut.png">
+  <link rel="shortcut icon" href="favicon.svg">
 
   <!-- ── OPEN GRAPH (Facebook, LinkedIn, WhatsApp) ── -->
   <meta property="og:type" content="website">
@@ -4549,6 +4550,54 @@ form?.addEventListener('submit', async e => {
     submitBtn.textContent = translateUiText('Wyślij zgłoszenie');
   }
 });
+</script>
+
+<!-- ── ADMIN VISIT COUNTER (Ctrl+Shift+H) ── -->
+<script>
+(async () => {
+  /* Liczymy wejście przez darmowe API — bez rejestracji */
+  const API = 'https://api.counterapi.dev/v1/handybiz-pl/visits/up';
+  let count = '…';
+  try {
+    const r = await fetch(API);
+    if (r.ok) count = (await r.json()).count ?? '?';
+  } catch (_) {}
+
+  /* Panel widoczny tylko dla właściciela */
+  const panel = Object.assign(document.createElement('div'), {
+    id: 'hb-admin-panel',
+    innerHTML: `
+      <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,169,110,.6)">Wejścia łącznie</span>
+      <span id="hb-visit-count" style="font-size:2rem;font-weight:900;color:#c8a96e;line-height:1.1">${count}</span>
+      <span style="font-size:.7rem;color:rgba(255,255,255,.35)">Ctrl+Shift+H aby ukryć</span>
+    `
+  });
+  Object.assign(panel.style, {
+    display: 'none',
+    flexDirection: 'column',
+    gap: '4px',
+    position: 'fixed',
+    bottom: '24px',
+    left: '24px',
+    background: 'rgba(10,10,10,.92)',
+    border: '1px solid rgba(200,169,110,.35)',
+    borderRadius: '12px',
+    padding: '14px 20px',
+    zIndex: '99999',
+    backdropFilter: 'blur(12px)',
+    boxShadow: '0 8px 32px rgba(0,0,0,.55)',
+    fontFamily: 'inherit',
+    minWidth: '160px',
+  });
+  document.body.appendChild(panel);
+
+  /* Skrót: Ctrl + Shift + H */
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey && e.shiftKey && e.key === 'H') {
+      panel.style.display = panel.style.display === 'none' ? 'flex' : 'none';
+    }
+  });
+})();
 </script>
 </body>
 </html>
