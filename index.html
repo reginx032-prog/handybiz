@@ -135,6 +135,13 @@
     }
     html { scroll-behavior: smooth; }
 
+    /* ── SCROLLBAR — maksymalnie subtelny ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(200,169,110,0.18); border-radius: 999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(200,169,110,0.38); }
+    * { scrollbar-width: thin; scrollbar-color: rgba(200,169,110,0.18) transparent; }
+
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
