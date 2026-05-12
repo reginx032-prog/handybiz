@@ -2493,6 +2493,9 @@
       .footer-socials { justify-content: center; }
       .problems-grid { grid-template-columns: 1fr; }
       .bp-tiers { grid-template-columns: 1fr; }
+      /* Pakiety carousel: każda karta na mobile = wysokość naturalna (bez sztywnego stretchu) */
+      #pakiety .bp-tiers { align-items: flex-start; }
+      #pakiety .bp-tier { min-height: auto; }
       /* Partner: 1-kolumnowy grid na mobile (prosty stack, bez carousel) */
       #oferta-partner .bp-tiers {
         display: grid;
