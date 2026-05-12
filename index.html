@@ -13,7 +13,7 @@
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#080808">
   <meta name="color-scheme" content="dark">
-  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
 
   <link rel="canonical" href="https://handybiz.pl/">
 
@@ -2052,11 +2052,9 @@
     .bp-tier-list li {
       font-size: 0.72rem;
       color: var(--muted);
-      padding: 4px 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
+      padding: 4px 0 4px 14px;
       line-height: 1.4;
+      position: relative;
       min-width: 0;
       overflow-wrap: anywhere;
       word-break: break-word;
@@ -2069,7 +2067,10 @@
     .bp-tier-list li::before {
       content: '·';
       color: var(--accent);
-      flex-shrink: 0;
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      line-height: 1.4;
     }
 
     /* ── EFFECTS ── */
