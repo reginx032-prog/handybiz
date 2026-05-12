@@ -2439,6 +2439,250 @@
     }
     .footer-copy { font-size: 0.75rem; color: var(--dim); }
 
+    /* ══ CAMPAIGN SECTION ══ */
+    .campaign { padding: 100px 0; }
+    .campaign-head { text-align: center; margin-bottom: 64px; }
+    .campaign-head .title span { color: var(--accent); }
+
+    .campaign-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .campaign-includes {
+      background: var(--bg-card);
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: var(--r-lg);
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .campaign-includes::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 0%, rgba(200,169,110,0.10), transparent 55%);
+      pointer-events: none;
+    }
+    .campaign-inc-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .campaign-inc-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 28px;
+      line-height: 1.3;
+    }
+    .campaign-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .campaign-checklist li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .campaign-checklist li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .campaign-checklist li strong { color: var(--text); }
+    .campaign-not-inc {
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      margin-bottom: 32px;
+    }
+    .campaign-not-inc-lbl {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 10px;
+    }
+    .campaign-not-inc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .campaign-not-inc li {
+      font-size: 0.82rem;
+      color: var(--dim);
+      padding-left: 18px;
+      position: relative;
+    }
+    .campaign-not-inc li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--dim);
+    }
+    .campaign-price {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .campaign-price-val {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .campaign-price-note {
+      font-size: 0.78rem;
+      color: var(--dim);
+      line-height: 1.4;
+    }
+
+    /* Process steps */
+    .campaign-process { }
+    .campaign-process-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 36px;
+      bottom: 36px;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(200,169,110,0.5), rgba(200,169,110,0.05));
+    }
+    .process-step {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 0 20px;
+      align-items: start;
+      padding: 20px 0;
+      position: relative;
+    }
+    .process-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(200,169,110,0.4);
+      background: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .process-content { padding-top: 8px; }
+    .process-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .process-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ══ FAQ ══ */
+    .faq { padding: 100px 0; }
+    .faq-head { text-align: center; margin-bottom: 56px; }
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 22px 44px 22px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: relative;
+      transition: color var(--t);
+    }
+    .faq-q::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--accent);
+      transition: transform var(--t);
+      line-height: 1;
+    }
+    .faq-q[aria-expanded="true"] { color: var(--accent); }
+    .faq-q[aria-expanded="true"]::after { transform: rotate(45deg); }
+    .faq-a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+      padding: 0 40px 22px 0;
+      display: none;
+    }
+    .faq-a.open { display: block; }
+    .faq-a strong { color: var(--text); }
+
+    /* ── RESPONSIVE nowe sekcje ── */
+    @media (max-width: 900px) {
+      .campaign-body { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .campaign-includes { padding: 28px 24px; }
+      .campaign-price-val { font-size: 2.2rem; }
+      .faq-q { font-size: 0.92rem; padding: 18px 36px 18px 0; }
+    }
+    @media (max-width: 540px) {
+      .campaign-includes { padding: 22px 18px; }
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
       .service-showcase { width: 100%; }
@@ -2816,8 +3060,9 @@
       <li><a href="#problemy">Co robimy</a></li>
       <li><a href="#jak-dzialamy">Jak działamy</a></li>
       <li><a href="#oferta">Oferta</a></li>
+      <li><a href="#strona-firmowa">Strona WWW</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="#kontakt" class="nav-cta">Umów konsultację</a></li>
+      <li><a href="#kontakt" class="nav-cta">Umów 30-min. rozmowę (bezpłatnie)</a></li>
     </ul>
     <div class="lang-switch" aria-label="Wybierz język strony">
       <button type="button" class="active" data-lang-option="pl" aria-pressed="true">PL</button>
@@ -2910,7 +3155,7 @@
                   spójna i budowała relację z klientem. Marketing ma nie tylko przyciągać uwagę,
                   ale też wzmacniać zaufanie i ułatwiać decyzję o kontakcie.
                 </p>
-                <a href="#oferta-marketing" class="btn btn-ghost btn-sm service-learn">Dowiedz się więcej</a>
+                <a href="#oferta-marketing" class="btn btn-ghost btn-sm service-learn">Zobacz szczegóły marketingu</a>
               </div>
               <ul class="service-points">
                 <li>Strategia marki i plan marketingowy, które wspierają cele firmy</li>
@@ -2936,7 +3181,7 @@
                   Pomagamy wybrać model sprzedaży dopasowany do branży, klienta i etapu firmy.
                   Porządkujemy sposób prowadzenia rozmów, ofertowania i podejmowania decyzji sprzedażowych.
                 </p>
-                <a href="#oferta-partner" class="btn btn-ghost btn-sm service-learn">Dowiedz się więcej</a>
+                <a href="#oferta-partner" class="btn btn-ghost btn-sm service-learn">Sprawdź pakiety współpracy</a>
               </div>
               <ul class="service-points">
                 <li>Ustalenie, czy lepiej sprzedawać pojedynczą usługę, pakiet, abonament czy większy projekt</li>
@@ -2962,7 +3207,7 @@
                   Szukamy rozwiązań, które realnie ułatwią pracę w Twoim obecnym systemie.
                   Tworzymy i łączymy narzędzia pod konkretny proces, zamiast dokładać kolejne przypadkowe aplikacje.
                 </p>
-                <a href="#oferta-automatyzacja" class="btn btn-ghost btn-sm service-learn">Dowiedz się więcej</a>
+                <a href="#oferta-automatyzacja" class="btn btn-ghost btn-sm service-learn">Zobacz zakres automatyzacji</a>
               </div>
               <ul class="service-points">
                 <li>Automatyzacja powtarzalnych zadań: dane, raporty, statusy, przypomnienia i powiadomienia</li>
@@ -2990,7 +3235,7 @@
                   Oddzielamy decyzje biznesowe od spraw księgowych, bo każda z tych rzeczy wymaga innej odpowiedzialności.
                   Ty dostajesz jasny kierunek działania i dostęp do właściwych specjalistów.
                 </p>
-                <a href="#oferta-start" class="btn btn-ghost btn-sm service-learn">Dowiedz się więcej</a>
+                <a href="#oferta-start" class="btn btn-ghost btn-sm service-learn">Sprawdź, czy to dla Ciebie</a>
               </div>
               <div class="service-split">
                 <div class="service-column">
@@ -3386,7 +3631,7 @@
                       <li>Profesjonalna strona www dopasowana do docelowego klienta</li>
                       <li>Uporządkowana oferta, opis usług i najważniejsze informacje</li>
                       <li>Spójny wygląd, kolorystyka i podstawowa komunikacja marketingowa</li>
-                      <li>Domena internetowa na okres roku z możliwością przedłużenia w niższej cenie przy wyborze dłuższego okresu</li>
+                      <li>Domena internetowa na <strong>5 lat</strong> wliczona w cenę pakietu</li>
                       <li>Możliwość stworzenia i ustawienia firmowego maila w domenie, np. jankowalski@twojanazwa.pl</li>
                       <li>Wybór platformy pocztowej: od bezpłatnej skrzynki po płatne rozwiązanie dopasowane do preferencji firmy</li>
                       <li>Utworzenie stopki (podpisu) w HTML, przygotowanej tak, aby pasowała do różnych skrzynek mailowych i nie była ucinana</li>
@@ -3428,12 +3673,134 @@
                 </div>
                 <button class="pkg-slider-btn next" type="button" data-pkg-slide="next" aria-label="Kolejny pakiet">›</button>
               </div>
-              <a href="#kontakt" class="btn btn-ghost btn-sm" style="width:100%; justify-content:center;">Zapytaj o pakiet dla firmy</a>
+              <a href="#kontakt" class="btn btn-ghost btn-sm" style="width:100%; justify-content:center;">Sprawdź, czy to dla Ciebie</a>
             </div>
           </div>
         </div>
 
       </div><!-- end .offer-blocks -->
+    </div>
+  </section>
+
+  <!-- ══ STRONA FIRMOWA — SEKCJA KAMPANIJNA ══ -->
+  <section class="campaign" id="strona-firmowa">
+    <div class="container">
+      <div class="campaign-head reveal">
+        <div class="label">Strona internetowa dla firm</div>
+        <h2 class="title">Profesjonalna strona firmowa<br><span>od 1970 zł — gotowa w 7–10 dni</span></h2>
+        <p class="sub">Jasna oferta, kontakt w zasięgu jednego kliknięcia i wygląd, który buduje zaufanie od pierwszej sekundy.<br>Domena na <strong>5 lat</strong> wliczona w cenę.</p>
+      </div>
+
+      <div class="campaign-body reveal">
+        <!-- Lewa: co dostajesz -->
+        <div class="campaign-includes">
+          <div class="campaign-inc-label">Pakiet Handy Basic</div>
+          <div class="campaign-inc-title">Co dostajesz za 1970 zł:</div>
+          <ul class="campaign-checklist">
+            <li>Profesjonalna strona firmowa dopasowana do Twojej branży i klientów</li>
+            <li>Domena internetowa na <strong>5 lat</strong> wliczona w cenę (nie na rok — na pięć)</li>
+            <li>Firmowy e-mail w domenie (np. kontakt@twojanazwa.pl)</li>
+            <li>Formularz kontaktowy + powiadomienia mailowe i SMS</li>
+            <li>Strona dostosowana do telefonów i tabletów</li>
+            <li>Spójna identyfikacja i komunikacja oferty</li>
+            <li>1 runda poprawek w ciągu 12 miesięcy od uruchomienia</li>
+            <li>Stopka HTML do skrzynek mailowych</li>
+          </ul>
+          <div class="campaign-not-inc">
+            <div class="campaign-not-inc-lbl">Pakiet nie obejmuje</div>
+            <ul>
+              <li>Tekstów i zdjęć (możemy pomóc — ustalamy zakres na rozmowie)</li>
+              <li>Hostingu po 1. roku (koszt ok. 200–400 zł/rok)</li>
+              <li>Rozbudowanych funkcjonalności (sklep, blog, rezerwacje) — to Handy Pro</li>
+            </ul>
+          </div>
+          <div class="campaign-price">
+            <span class="campaign-price-val">1970 zł</span>
+            <span class="campaign-price-note">jednorazowo<br>bez ukrytych kosztów</span>
+          </div>
+          <a href="#kontakt" class="btn btn-primary">Umów 30-min. rozmowę (bezpłatnie)</a>
+        </div>
+
+        <!-- Prawa: proces realizacji -->
+        <div class="campaign-process">
+          <div class="campaign-process-title">Jak wygląda realizacja?</div>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="process-num">01</div>
+              <div class="process-content">
+                <div class="process-title">Rozmowa wstępna (30 min)</div>
+                <div class="process-desc">Poznajemy firmę, branżę i cel strony. Ustalamy zakres, termin i kolejne kroki. Zero zobowiązań.</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num">02</div>
+              <div class="process-content">
+                <div class="process-title">Projekt i treść</div>
+                <div class="process-desc">Tworzymy wygląd i strukturę. Możesz dostarczyć własne materiały lub skorzystać z naszej pomocy przy tekstach i zdjęciach.</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num">03</div>
+              <div class="process-content">
+                <div class="process-title">Budowa i wdrożenie</div>
+                <div class="process-desc">Stawiamy stronę na serwerze, konfigurujemy domenę, firmowy mail i formularz kontaktowy.</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num">04</div>
+              <div class="process-content">
+                <div class="process-title">Odbiór i przekazanie</div>
+                <div class="process-desc">Przeglądasz gotową stronę, wprowadzamy ostatnie poprawki i przekazujemy wszystkie dostępy.</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:32px; padding:20px 24px; background:rgba(200,169,110,0.06); border:1px solid rgba(200,169,110,0.2); border-radius:var(--r);">
+            <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Czas realizacji</div>
+            <div style="font-size:1.1rem;font-weight:800;color:var(--text);">7–10 dni roboczych</div>
+            <div style="font-size:.82rem;color:var(--muted);margin-top:4px;">od zebrania materiałów do uruchomienia strony</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-head reveal">
+        <div class="label">Najczęstsze pytania</div>
+        <h2 class="title">Masz pytania? Mamy odpowiedzi.</h2>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Ile trwa realizacja strony?</button>
+          <div class="faq-a">Standardowy czas realizacji to <strong>7–10 dni roboczych</strong> od momentu zebrania wszystkich materiałów. Przy rozbudowanych projektach (Handy Pro) czas może być dłuższy — informujemy o tym na etapie wyceny.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Czy domena i hosting są wliczone w cenę?</button>
+          <div class="faq-a">Domena jest wliczona w pakiet Basic na <strong>5 lat</strong> — nie na rok, jak u większości dostawców. Hosting zapewniamy przez 1. rok w ramach pakietu. Po tym czasie koszt to ok. 200–400 zł/rok w zależności od wybranego rozwiązania.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Czy muszę dostarczyć teksty i zdjęcia?</button>
+          <div class="faq-a">Najlepiej jeśli dostarczysz własne materiały — znasz swoją firmę najlepiej. Możemy jednak pomóc napisać treści i dobrać zdjęcia z licencjonowanych baz. Zakres wsparcia ustalamy podczas rozmowy wstępnej.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Ile poprawek jest wliczonych w pakiet?</button>
+          <div class="faq-a">Pakiet <strong>Basic</strong> — 1 runda poprawek w ciągu 12 miesięcy. <strong>Boost</strong> — 2 rundy. <strong>Handy Pro</strong> — 5 rund. Dodatkowe zmiany poza pakietem wyceniamy indywidualnie.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Czy strona będzie widoczna na telefonach?</button>
+          <div class="faq-a">Tak — każda strona jest w pełni responsywna i działa poprawnie na telefonach, tabletach i komputerach. Testujemy to przed przekazaniem.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Czy mogę samodzielnie edytować stronę po uruchomieniu?</button>
+          <div class="faq-a">To zależy od technologii — ustalamy to na etapie rozmowy. Dla prostszych stron zazwyczaj przekazujemy dostęp do panelu, gdzie możesz edytować treści bez znajomości kodowania.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Co się stanie, jeśli nie będę zadowolony z efektu?</button>
+          <div class="faq-a">Przed startem zbieramy dokładne wytyczne i pokazujemy Ci projekt do akceptacji <em>przed</em> wdrożeniem. Zależy nam na tym, żebyś był zadowolony — dlatego nie pracujemy na gotowych szablonach.</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -4555,6 +4922,53 @@ form?.addEventListener('submit', async e => {
   }
 });
 </script>
+
+<!-- ── FAQ ACCORDION ── -->
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    // Zamknij wszystkie
+    document.querySelectorAll('.faq-q').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    // Otwórz kliknięty (toggle)
+    if (!isOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      answer.classList.add('open');
+    }
+  });
+});
+</script>
+
+<!-- ── META PIXEL ── -->
+<!-- UZUPEŁNIJ: zastąp TWOJ_PIXEL_ID swoim ID Pixela z Meta Business Suite -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'TWOJ_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=TWOJ_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+-->
+
+<!-- ── CRISP LIVE CHAT ── -->
+<!-- UZUPEŁNIJ: zarejestruj się na crisp.chat (bezpłatnie), zastąp TWOJ_WEBSITE_ID -->
+<!--
+<script type="text/javascript">
+  window.$crisp=[];window.CRISP_WEBSITE_ID="TWOJ_WEBSITE_ID";
+  (function(){d=document;s=d.createElement("script");
+  s.src="https://client.crisp.chat/l.js";s.async=1;
+  d.getElementsByTagName("head")[0].appendChild(s);})();
+</script>
+-->
 
 <!-- ── ADMIN VISIT COUNTER (Ctrl+Shift+H) ── -->
 <script>
