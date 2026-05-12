@@ -1750,60 +1750,6 @@
       .pkg-slider-btn { display: none; }
       .pkg-slider-wrap { padding: 0; }
     }
-
-    /* Wyróżnienie "Domena i hosting w cenie" */
-    .bp-tier-highlight {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(200,169,110,0.12);
-      border: 1px solid rgba(200,169,110,0.4);
-      color: var(--accent);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 5px 10px;
-      border-radius: 100px;
-      margin-bottom: 14px;
-    }
-    .bp-tier-highlight::before {
-      content: '★';
-      font-size: 0.6rem;
-    }
-
-    /* Swipe hint na mobile */
-    .pkg-swipe-hint {
-      display: none;
-    }
-    @media (pointer: coarse) {
-      .pkg-swipe-hint {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.72rem;
-        color: var(--dim);
-        margin-top: 10px;
-        padding-left: 2px;
-        animation: swipeHintFade 0.4s ease 3.5s forwards;
-      }
-      .pkg-swipe-hint.hidden { display: none; }
-      .pkg-swipe-finger {
-        font-size: 1.1rem;
-        display: inline-block;
-        animation: swipeFinger 1.4s ease-in-out 0.6s 3;
-        transform-origin: bottom center;
-      }
-    }
-    @keyframes swipeFinger {
-      0%   { transform: translateX(0); opacity: 1; }
-      40%  { transform: translateX(-14px); opacity: 1; }
-      60%  { transform: translateX(-14px); opacity: 0.4; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes swipeHintFade {
-      to { opacity: 0; pointer-events: none; }
-    }
     .bp-tier {
       padding: 22px 18px;
       background: var(--bg);
@@ -3433,14 +3379,13 @@
                     <div class="bp-tier-name">Handy Basic</div>
                     <div class="bp-tier-price">1970 zł</div>
                     <div class="bp-tier-period">jednorazowo</div>
-                    <div class="bp-tier-highlight">Domena i hosting w cenie</div>
                     <ul class="bp-tier-list">
                       <li>Dla małych i średnich firm, które chcą profesjonalnie zaprezentować ofertę i ułatwić klientom szybki kontakt</li>
                       <li>Dobry wybór także dla osób, które chcą odświeżyć swoją aktualną stronę internetową</li>
                       <li>Profesjonalna strona www dopasowana do docelowego klienta</li>
                       <li>Uporządkowana oferta, opis usług i najważniejsze informacje</li>
                       <li>Spójny wygląd, kolorystyka i podstawowa komunikacja marketingowa</li>
-                      <li>Domena internetowa na <strong>5 lat</strong> wliczona w cenę pakietu, z możliwością taniego przedłużenia po tym czasie</li>
+                      <li>Domena internetowa na okres roku z możliwością przedłużenia w niższej cenie przy wyborze dłuższego okresu</li>
                       <li>Możliwość stworzenia i ustawienia firmowego maila w domenie, np. jankowalski@twojanazwa.pl</li>
                       <li>Wybór platformy pocztowej: od bezpłatnej skrzynki po płatne rozwiązanie dopasowane do preferencji firmy</li>
                       <li>Utworzenie stopki (podpisu) w HTML, przygotowanej tak, aby pasowała do różnych skrzynek mailowych i nie była ucinana</li>
@@ -3482,11 +3427,7 @@
                 </div>
                 <button class="pkg-slider-btn next" type="button" data-pkg-slide="next" aria-label="Kolejny pakiet">›</button>
               </div>
-              <div class="pkg-swipe-hint" id="pkg-swipe-hint">
-                <span class="pkg-swipe-finger">👆</span>
-                <span>Przesuń, żeby zobaczyć inne pakiety</span>
-              </div>
-              <a href="#kontakt" class="btn btn-ghost btn-sm" style="width:100%; justify-content:center;">Sprawdź, czy to dla Ciebie</a>
+              <a href="#kontakt" class="btn btn-ghost btn-sm" style="width:100%; justify-content:center;">Zapytaj o pakiet dla firmy</a>
             </div>
           </div>
         </div>
@@ -4612,18 +4553,6 @@ form?.addEventListener('submit', async e => {
     submitBtn.textContent = translateUiText('Wyślij zgłoszenie');
   }
 });
-</script>
-
-<!-- ── PKG SWIPE HINT — ukryj po pierwszym swipe ── -->
-<script>
-(function() {
-  const hint = document.getElementById('pkg-swipe-hint');
-  const slider = document.getElementById('pkg-slider');
-  if (!hint || !slider) return;
-  const hide = () => { hint.classList.add('hidden'); slider.removeEventListener('touchstart', hide); };
-  slider.addEventListener('touchstart', hide, { passive: true });
-  setTimeout(hide, 5000);
-})();
 </script>
 
 <!-- ── ADMIN VISIT COUNTER (Ctrl+Shift+H) ── -->
