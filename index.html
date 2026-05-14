@@ -16,6 +16,7 @@
   <meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
 
   <link rel="canonical" href="https://handybiz.pl/">
+  <link rel="alternate" type="text/plain" href="https://handybiz.pl/llms.txt" title="HANDYBIZ information for AI assistants">
 
   <!-- ── FAVICON ── -->
   <link rel="icon" type="image/png" href="favicon.png">
@@ -310,6 +311,7 @@
     .nav-links li:nth-child(3) { animation-delay: 0.4s; }
     .nav-links li:nth-child(4) { animation-delay: 0.5s; }
     .nav-links li:nth-child(5) { animation-delay: 0.6s; }
+    .nav-links li:nth-child(6) { animation-delay: 0.7s; }
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
@@ -1569,7 +1571,6 @@
     .oblock-desc p:last-child { margin-bottom: 0; }
     .oblock-desc strong { color: var(--text); font-weight: 600; }
     .oblock-desc em { font-style: normal; color: rgba(200,169,110,0.8); }
-
     .oblock-right {
       padding: 40px 48px;
     }
@@ -1747,8 +1748,25 @@
     }
     .pkg-slider-head .oblock-scope-lbl { margin: 0; }
     @media (max-width: 540px) {
-      .pkg-slider-btn { display: none; }
-      .pkg-slider-wrap { padding: 0; }
+      .pkg-slider-wrap {
+        padding: 0 34px;
+        overflow: visible;
+      }
+      .pkg-slider-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 10px;
+        font-size: 1.8rem;
+        background: rgba(8,8,8,0.94);
+        border-color: rgba(200,169,110,0.72);
+        color: #d7b978;
+        box-shadow: 0 16px 34px rgba(0,0,0,0.48), 0 0 0 1px rgba(200,169,110,0.12);
+      }
+      .pkg-slider-btn.prev { left: -2px; }
+      .pkg-slider-btn.next { right: -2px; }
     }
     .bp-tier {
       padding: 22px 18px;
@@ -1905,6 +1923,42 @@
       color: var(--text);
       line-height: 1.05;
       margin-bottom: 5px;
+    }
+    .pkg-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 13px 0 17px;
+    }
+    .pkg-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 25px;
+      padding: 5px 9px;
+      border: 1px solid rgba(255,255,255,0.095);
+      border-radius: 7px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018)),
+        rgba(13,13,13,0.72);
+      color: rgba(246,246,246,0.82);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.045),
+        0 10px 22px rgba(0,0,0,0.14);
+      font-size: 0.56rem;
+      font-weight: 850;
+      letter-spacing: 0.075em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .pkg-highlight::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(200,169,110,0.82);
+      box-shadow: 0 0 10px rgba(200,169,110,0.34);
     }
     #pakiety .pro-tier .bp-tier-price {
       font-size: 1.28rem;
@@ -2385,7 +2439,17 @@
       font-size: 0.72rem;
       color: var(--dim);
     }
-
+    .form-privacy {
+      text-align: center;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.28);
+      line-height: 1.55;
+      margin-top: -8px;
+    }
+    .form-privacy a {
+      color: rgba(200,169,110,0.68);
+      font-weight: 600;
+    }
     /* ── FOOTER ── */
     footer {
       padding: 52px 40px;
@@ -2439,6 +2503,22 @@
       height: 18px;
       fill: currentColor;
     }
+    .footer-legal {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+    .footer-links a { color: rgba(255,255,255,0.22); }
+    .footer-links a:hover { color: rgba(255,255,255,0.42); }
     .footer-copy { font-size: 0.75rem; color: var(--dim); }
 
     /* ── RESPONSIVE ── */
@@ -2491,6 +2571,8 @@
       .mob-nav { padding: 24px 20px; }
       footer { padding: 40px 20px; flex-direction: column; text-align: center; }
       .footer-socials { justify-content: center; }
+      .footer-legal { align-items: center; }
+      .footer-links { justify-content: center; }
       .problems-grid { grid-template-columns: 1fr; }
       .bp-tiers { grid-template-columns: 1fr; }
       /* Pakiety carousel: każda karta na mobile = wysokość naturalna (bez sztywnego stretchu) */
@@ -2821,6 +2903,7 @@
       <li><a href="#problemy">Co robimy</a></li>
       <li><a href="#jak-dzialamy">Jak działamy</a></li>
       <li><a href="#oferta">Oferta</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
       <li><a href="#kontakt" class="nav-cta">Umów konsultację</a></li>
     </ul>
@@ -2837,6 +2920,7 @@
     <a href="#problemy"    onclick="closeMob()">Co robimy</a>
     <a href="#jak-dzialamy" onclick="closeMob()">Jak działamy</a>
     <a href="#oferta"      onclick="closeMob()">Oferta</a>
+    <a href="blog.html"    onclick="closeMob()">Blog</a>
     <a href="#kontakt"     onclick="closeMob()">Kontakt</a>
     <a href="#kontakt"     onclick="closeMob()">Umów konsultację</a>
   </div>
@@ -2844,7 +2928,7 @@
   <!-- ══ HERO ══ -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">Strony WWW · Marketing · Automatyzacja</div>
+      <div class="hero-badge">Consulting · Marketing · Automatyzacja · Strony WWW</div>
 
       <div class="hero-brand-group">
         <div class="hero-welcome" aria-hidden="true">Witaj w</div>
@@ -2913,7 +2997,8 @@
                 <p>
                   Układamy markę, komunikację i działania promocyjne tak, żeby firma była widoczna,
                   spójna i budowała relację z klientem. Marketing ma nie tylko przyciągać uwagę,
-                  ale też wzmacniać zaufanie i ułatwiać decyzję o kontakcie.
+                  ale też wzmacniać zaufanie i ułatwiać decyzję o kontakcie. Możemy też prowadzić
+                  opiekę nad stroną www oraz profilami Facebook i Instagram.
                 </p>
                 <a href="#oferta-marketing" class="btn btn-ghost btn-sm service-learn">Dowiedz się więcej</a>
               </div>
@@ -2923,6 +3008,7 @@
                 <li>Komunikacja nastawiona na zaufanie, relację i powrót klienta</li>
                 <li>Produkcja treści wideo: scenariusz, nagranie, montaż i postprodukcja</li>
                 <li>Content marketing, materiały promocyjne i komunikacja w social media</li>
+                <li>Opieka nad stroną www oraz profilami Facebook i Instagram</li>
                 <li>Kampanie reklamowe w kanałach cyfrowych i tradycyjnych</li>
                 <li>Grafiki, identyfikacja wizualna i spójność marki we wszystkich kanałach</li>
                 <li>Budżet marketingowy, badanie satysfakcji, analiza wyników i raportowanie efektów</li>
@@ -3212,7 +3298,7 @@
               <div class="oblock-desc">
                 <p>Marketing nie powinien być zbiorem przypadkowych postów, reklam i grafik. Powinien jasno pokazywać, kim jest firma, komu pomaga i dlaczego klient może jej zaufać.</p>
                 <p><strong>Porządkujemy strategię marki, komunikację, treści, kampanie i materiały wizualne tak, żeby pracowały w jednym kierunku.</strong></p>
-                <p>Możemy zacząć od strony www, identyfikacji, contentu, wideo, kampanii reklamowej albo pełnego planu działań marketingowych.</p>
+                <p>Możemy zacząć od strony www, identyfikacji, contentu, wideo, kampanii reklamowej, opieki nad social mediami albo pełnego planu działań marketingowych.</p>
                 <p><em>Efekt: marketing staje się spójny, mierzalny i bardziej zrozumiały dla klienta.</em></p>
               </div>
             </div>
@@ -3225,14 +3311,15 @@
                 <li>Analiza rynku, trendów i potrzeb klientów</li>
                 <li>Strony www, landing page i komunikacja oferty</li>
                 <li>Content marketing, social media i materiały promocyjne</li>
+                <li>Opieka nad stroną www oraz profilami Facebook i Instagram</li>
                 <li>Produkcja wideo: scenariusz, nagranie, montaż, postprodukcja</li>
                 <li>Kampanie reklamowe cyfrowe i tradycyjne</li>
                 <li>Grafiki, identyfikacja wizualna i spójność marki</li>
                 <li>Budżet, analiza wyników i raportowanie efektów</li>
               </ul>
               <div class="oblock-scope-lbl">Cennik</div>
-              <div class="price-individual">Wycena po rozmowie. Możemy zacząć od małego zakresu albo pełnej obsługi.</div>
-              <a href="#kontakt" class="btn btn-ghost btn-sm">Zapytaj o marketing</a>
+              <div class="price-individual">Wycena po rozmowie. Możemy zacząć od małego zakresu, pełnej obsługi albo wycenić indywidualnie tylko to, czego aktualnie potrzebujesz. Wystarczy napisać maila.</div>
+              <a href="#kontakt" class="btn btn-ghost btn-sm">Ułóżmy marketing pod Twoją firmę</a>
             </div>
           </div>
         </div>
@@ -3269,7 +3356,7 @@
               </ul>
               <div class="oblock-scope-lbl">Cennik</div>
               <div class="price-individual">Wycena po rozmowie. Dobieramy zakres do realnej potrzeby, nie do gotowego pakietu.</div>
-              <a href="#kontakt" class="btn btn-ghost btn-sm">Zapytaj o automatyzację</a>
+              <a href="#kontakt" class="btn btn-ghost btn-sm">Zobacz, co możemy zautomatyzować</a>
             </div>
           </div>
         </div>
@@ -3338,7 +3425,7 @@
                 </div>
               </div>
               <div class="bp-price-note">Ceny są orientacyjne i mogą ulec zmianie w zależności od wymagań klienta, zakresu współpracy oraz ewentualnej dodatkowej pracy po naszej stronie.</div>
-              <a href="#kontakt" class="btn btn-ghost btn-sm" style="width:100%; justify-content:center;">Porozmawiaj o współpracy</a>
+              <a href="#kontakt" class="btn btn-ghost btn-sm" style="width:100%; justify-content:center;">Porozmawiajmy o stałym wsparciu</a>
             </div>
           </div>
         </div>
@@ -3348,17 +3435,19 @@
           <div class="oblock-top">
             <div class="oblock-num">02</div>
             <div class="oblock-top-content">
-              <div class="oblock-cat">Strona WWW · Domena · Mail firmowy · Automatyzacja</div>
-              <h3 class="oblock-headline">Kompletne rozwiązania online dla firm gotowych na lepszą sprzedaż.</h3>
+              <div class="oblock-cat">Strona WWW · Domena na 5 lat w cenie · Mail firmowy · Automatyzacja</div>
+              <h3 class="oblock-headline">Nie tylko strona www. Gotowe rozwiązanie online dopasowane do tego, jak sprzedaje Twoja firma.</h3>
             </div>
           </div>
           <div class="oblock-body">
             <div class="oblock-left">
               <div class="oblock-desc">
+                <p><strong>Nie kupuj "kota w worku".</strong> Otrzymaj darmowy podgląd strony, zanim zdecydujesz się na współpracę.</p>
                 <p>Strona internetowa powinna pomagać w sprzedaży, a nie tylko istnieć w sieci. Klient, który trafia na Twoją firmę, musi szybko zrozumieć, co oferujesz, dlaczego warto wybrać właśnie Ciebie i jak może zrobić kolejny krok.</p>
                 <p><strong>Nawet jeśli masz już stronę, warto sprawdzić, czy naprawdę pracuje na Twój biznes.</strong> Często problemem nie jest sam wygląd, tylko niejasna oferta, słabe prowadzenie klienta, brak wygodnego kontaktu albo strona, która nie buduje zaufania.</p>
                 <p>Dobrze przygotowana obecność online daje więcej niż estetyczny projekt. Pomaga uporządkować komunikację, zwiększa wiarygodność firmy, ułatwia pozyskiwanie zapytań i sprawia, że klient szybciej podejmuje decyzję o kontakcie.</p>
                 <p>Trudno znaleźć firmę, która zrobi to naprawdę dobrze, pod konkretny biznes i jego klientów, a nie według gotowego schematu. Dlatego od tego jesteśmy my: łączymy stronę, domenę, firmowy mail, formularz i podstawową automatyzację w rozwiązanie, które ma wspierać sprzedaż od pierwszego dnia.</p>
+                <p><strong>Nie potrzebujesz całego pakietu?</strong> Możemy wycenić indywidualnie jedną konkretną rzecz, np. samą stronę www, poprawę obecnej strony, formularz albo mail firmowy. Napisz do nas, a przygotujemy ofertę dopasowaną do tego, czego faktycznie potrzebujesz.</p>
               </div>
             </div>
             <div class="oblock-right">
@@ -3366,44 +3455,47 @@
               <div class="pkg-slider-head">
                 <div class="oblock-scope-lbl">Gotowe opcje</div>
               </div>
-              <div class="bp-tier-detail" id="pkg-tier-detail" aria-live="polite">
-                <div class="bp-detail-top">
-                  <div>
-                    <div class="bp-detail-name" id="pkg-detail-name"></div>
-                    <div class="bp-detail-price" id="pkg-detail-price"></div>
-                    <div class="bp-detail-period" id="pkg-detail-period"></div>
-                  </div>
-                  <button class="bp-detail-close pkg-detail-close" type="button" aria-label="Zamknij podgląd pakietu">×</button>
-                </div>
-                <ul class="bp-detail-list" id="pkg-detail-list"></ul>
-              </div>
               <div class="pkg-slider-wrap">
                 <button class="pkg-slider-btn prev" type="button" data-pkg-slide="prev" aria-label="Poprzedni pakiet">‹</button>
                 <div class="bp-tiers" id="pkg-slider">
-                  <div class="bp-tier featured" tabindex="0" role="button" aria-label="Pokaż pakiet WWW plus zgłoszenia">
+                  <div class="bp-tier featured">
                     <div class="bp-tier-badge">Dla firm, które chcą zacząć</div>
                     <div class="bp-tier-name">Handy Basic</div>
                     <div class="bp-tier-price">1970 zł</div>
                     <div class="bp-tier-period">jednorazowo</div>
+                    <div class="pkg-highlights" aria-label="Wyróżniki pakietu Handy Basic">
+                      <span class="pkg-highlight">Domena 5 lat w cenie</span>
+                      <span class="pkg-highlight">Mail firmowy</span>
+                      <span class="pkg-highlight">Darmowy podgląd strony</span>
+                      <span class="pkg-highlight">Mini automatyzacja</span>
+                    </div>
                     <ul class="bp-tier-list">
                       <li>Dla małych i średnich firm, które chcą profesjonalnie zaprezentować ofertę i ułatwić klientom szybki kontakt</li>
                       <li>Dobry wybór także dla osób, które chcą odświeżyć swoją aktualną stronę internetową</li>
                       <li>Profesjonalna strona www dopasowana do docelowego klienta</li>
                       <li>Uporządkowana oferta, opis usług i najważniejsze informacje</li>
                       <li>Spójny wygląd, kolorystyka i podstawowa komunikacja marketingowa</li>
-                      <li>Domena internetowa na okres roku z możliwością przedłużenia w niższej cenie przy wyborze dłuższego okresu</li>
-                      <li>Możliwość stworzenia i ustawienia firmowego maila w domenie, np. kontakt<wbr>@twojanazwa.pl</li>
+                      <li>Domena internetowa na 5 lat w cenie pakietu, z możliwością dalszego przedłużenia w najniższych możliwych cenach</li>
+                      <li>Mail firmowy dla Twojej firmy: możliwość stworzenia i ustawienia adresu w domenie, np. kontakt<wbr>@twojanazwa.pl</li>
                       <li>Wybór platformy pocztowej: od bezpłatnej skrzynki po płatne rozwiązanie dopasowane do preferencji firmy</li>
+                      <li>Wizytówka Google dla firmy, jeśli będzie potrzebna do lepszej widoczności lokalnej</li>
                       <li>Utworzenie stopki (podpisu) w HTML, przygotowanej tak, aby pasowała do różnych skrzynek mailowych i nie była ucinana</li>
                       <li>Dopracowanie strony po starcie i do 1 edycji w ciągu 12 miesięcy</li>
-                      <li>Formularz zgłoszeniowy oraz powiadomienia na maila i telefon</li>
+                      <li>Mini automatyzacja: formularz zgłoszeniowy oraz powiadomienia na maila i telefon, żeby szybciej reagować na zapytania</li>
                     </ul>
                   </div>
-                  <div class="bp-tier" tabindex="0" role="button" aria-label="Pokaż pakiet WWW plus reklama start">
+                  <div class="bp-tier">
                     <div class="bp-tier-badge">Dla firm, które chcą ruch</div>
                     <div class="bp-tier-name">Handy Boost</div>
                     <div class="bp-tier-price">2870 zł</div>
                     <div class="bp-tier-period">jednorazowo</div>
+                    <div class="pkg-highlights" aria-label="Wyróżniki pakietu Handy Boost">
+                      <span class="pkg-highlight">Reklama start</span>
+                      <span class="pkg-highlight">Mini automatyzacja</span>
+                      <span class="pkg-highlight">Domena 5 lat w cenie</span>
+                      <span class="pkg-highlight">Mail firmowy</span>
+                      <span class="pkg-highlight">Darmowy podgląd strony</span>
+                    </div>
                     <ul class="bp-tier-list">
                       <li>Wszystko z pakietu Handy Basic</li>
                       <li>Dla firmy, która po uruchomieniu strony chce od razu zacząć docierać do klientów</li>
@@ -3414,11 +3506,19 @@
                       <li>Dopracowanie strony po starcie i do 2 edycji w ciągu 12 miesięcy</li>
                     </ul>
                   </div>
-                  <div class="bp-tier pro-tier" tabindex="0" role="button" aria-label="Pokaż pakiet Handy Pro">
+                  <div class="bp-tier pro-tier">
                     <div class="bp-tier-name">Handy Pro</div>
                     <div class="bp-tier-price">od 4940 zł</div>
                     <div class="bp-tier-price-note">Najniższa możliwa cena. Finalna wycena zależy od wymagań klienta, zakresu projektu oraz liczby godzin potrzebnych na rozbudowę strony.</div>
                     <div class="bp-tier-period">jednorazowo</div>
+                    <div class="pkg-highlights" aria-label="Wyróżniki pakietu Handy Pro">
+                      <span class="pkg-highlight">Rozbudowana strona</span>
+                      <span class="pkg-highlight">Większa automatyzacja</span>
+                      <span class="pkg-highlight">Serwer dopasowany do projektu</span>
+                      <span class="pkg-highlight">CRM lub panel</span>
+                      <span class="pkg-highlight">Reklama startowa</span>
+                      <span class="pkg-highlight">Darmowy podgląd</span>
+                    </div>
                     <ul class="bp-tier-list">
                       <li>Dla średnich i dużych firm, które potrzebują bardziej rozbudowanej strony oraz dłuższej współpracy z naszym działem marketingowym</li>
                       <li>Bardziej rozbudowana strona postawiona na serwerze, w jakości Handy Basic, wzbogacona o dodatkowe sekcje i dopracowaną treść. Cena pakietu może wzrosnąć wraz z zakresem prac i liczbą godzin potrzebnych na przygotowanie rozbudowanych sekcji</li>
@@ -3433,7 +3533,7 @@
                 </div>
                 <button class="pkg-slider-btn next" type="button" data-pkg-slide="next" aria-label="Kolejny pakiet">›</button>
               </div>
-              <a href="#kontakt" class="btn btn-ghost btn-sm" style="width:100%; justify-content:center;">Zapytaj o pakiet dla firmy</a>
+              <a href="#kontakt" class="btn btn-ghost btn-sm" style="width:100%; justify-content:center;">Zobacz darmowy podgląd swojej strony</a>
             </div>
           </div>
         </div>
@@ -3585,9 +3685,9 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="msg">Opisz swój problem lub wyzwanie</label>
+              <label class="form-label" for="msg">Opisz swój problem lub wyzwanie (opcjonalnie)</label>
               <textarea id="msg" name="message" class="form-ctrl"
-                placeholder="Napisz, co dzieje się w firmie i jaki efekt chcesz osiągnąć. Możesz opisać problem prostymi słowami, a my pomożemy uporządkować pierwszy krok." required></textarea>
+                placeholder="Napisz, co dzieje się w firmie i jaki efekt chcesz osiągnąć. Możesz opisać problem prostymi słowami, a my pomożemy uporządkować pierwszy krok."></textarea>
             </div>
 
             <div class="form-status" id="form-status"></div>
@@ -3596,6 +3696,10 @@
               Wyślij zgłoszenie
             </button>
             <p class="form-note">Najpierw rozmawiamy i poznajemy sytuację. Dopiero później proponujemy zakres, wycenę albo osobę, która najlepiej pomoże.</p>
+            <p class="form-privacy">
+              Wysyłając zgłoszenie, akceptujesz
+              <a href="polityka-prywatnosci.html">Politykę prywatności HANDYBIZ</a>.
+            </p>
           </form>
         </div>
 
@@ -3621,7 +3725,13 @@
         </a>
       </div>
     </div>
-    <div class="footer-copy">© 2026 HANDYBIZ. Wszelkie prawa zastrzeżone.</div>
+    <div class="footer-legal">
+      <div class="footer-links" aria-label="Linki prawne">
+        <a href="blog.html">Blog</a>
+        <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      </div>
+      <div class="footer-copy">© 2026 HANDYBIZ. Wszelkie prawa zastrzeżone.</div>
+    </div>
   </footer>
 
 </div><!-- /.wrapper -->
@@ -3863,7 +3973,7 @@ const translations = {
   'Umów konsultację': 'Book a consultation',
   'Umów darmową konsultację': 'Book a free consultation',
   'Sprawdź gotowe pakiety dla Twojej firmy': 'See ready-made packages for your company',
-  'Strony WWW · Marketing · Automatyzacja': 'Websites · Marketing · Automation',
+  'Consulting · Marketing · Automatyzacja · Strony WWW': 'Consulting · Marketing · Automation · Websites',
   'Witaj w': 'Welcome to',
   'Pomagamy firmom zmieniać problemy w konkretne działania.': 'We help companies turn problems into concrete actions.',
   'Ty rozwijasz firmę. My usuwamy to, co Cię blokuje.': 'You grow your company. We remove what holds it back.',
@@ -3910,12 +4020,12 @@ const translations = {
   'Wspólne planowanie i prowadzenie wdrożeń: od decyzji, przez wybór narzędzi, po automatyzacje lub systemy tworzone pod firmę': 'Joint planning and implementation: from decisions and tool selection to automations or systems created for the company',
   'Najlepsze warunki na automatyzacje i systemy tworzone z HandyBiz': 'Best conditions for automations and systems created with HandyBiz',
   'Gotowe pakiety www': 'Ready-made website packages',
-  'Kompletne rozwiązania online dla firm gotowych na lepszą sprzedaż.': 'Complete online solutions for companies ready for better sales.',
+  'Nie tylko strona www. Gotowe rozwiązanie online dopasowane do tego, jak sprzedaje Twoja firma.': 'Not just a website. A ready online solution matched to how your company sells.',
   'Gotowe opcje': 'Ready options',
   'Dla firm, które chcą zacząć': 'For companies that want to start',
   'Dla firm, które chcą ruch': 'For companies that want traffic',
   'jednorazowo': 'one-time',
-  'Zapytaj o pakiet dla firmy': 'Ask about a company package',
+  'Zobacz darmowy podgląd swojej strony': 'See a free preview of your website',
   'Pierwsza konsultacja bezpłatna': 'First consultation free',
   'Co dokładnie robimy?': 'What exactly do we do?',
   'Zaczynamy od tego, czego naprawdę potrzebuje Twoja firma.': 'We start with what your company really needs.',
@@ -4018,11 +4128,12 @@ const translations = {
   'Analiza rynku, trendów i potrzeb klientów': 'Market, trend and customer-needs analysis',
   'Strony www, landing page i komunikacja oferty': 'Websites, landing pages and offer communication',
   'Content marketing, social media i materiały promocyjne': 'Content marketing, social media and promotional materials',
+  'Opieka nad stroną www oraz profilami Facebook i Instagram': 'Website care and Facebook and Instagram profile management',
   'Produkcja wideo: scenariusz, nagranie, montaż, postprodukcja': 'Video production: script, recording, editing, post-production',
   'Kampanie reklamowe cyfrowe i tradycyjne': 'Digital and traditional advertising campaigns',
   'Grafiki, identyfikacja wizualna i spójność marki': 'Graphics, visual identity and brand consistency',
   'Budżet, analiza wyników i raportowanie efektów': 'Budget, performance analysis and result reporting',
-  'Zapytaj o marketing': 'Ask about marketing',
+  'Ułóżmy marketing pod Twoją firmę': 'Let us shape marketing for your company',
   'Automatyzacja · Systemy · Aplikacje · Dane': 'Automation · Systems · Apps · Data',
   'Technologia ma ułatwiać pracę, a nie dokładać kolejny chaos.': 'Technology should make work easier, not add another layer of chaos.',
   'Automatyzacja i rozwiązania technologiczne': 'Automation and technology solutions',
@@ -4033,9 +4144,9 @@ const translations = {
   'Kalkulatory ofertowe, formularze i proste aplikacje webowe': 'Offer calculators, forms and simple web applications',
   'Aplikacje Android / iOS dopasowane do procesu biznesu': 'Android / iOS apps tailored to the business process',
   'Strony www, landing page, domeny, poczta, chmura i dostępy': 'Websites, landing pages, domains, email, cloud and access',
-  'Zapytaj o automatyzację': 'Ask about automation',
-  'Porozmawiaj o współpracy': 'Talk about cooperation',
-  'Strona WWW · Domena · Mail firmowy · Automatyzacja': 'Website · Domain · Business email · Automation',
+  'Zobacz, co możemy zautomatyzować': 'See what we can automate',
+  'Porozmawiajmy o stałym wsparciu': 'Let us talk about ongoing support',
+  'Strona WWW · Domena na 5 lat w cenie · Mail firmowy · Automatyzacja': 'Website · Domain for 5 years included · Business email · Automation',
   'Pakiety techniczne': 'Technical packages',
   '1970 zł': '1,970 PLN',
   '2870 zł': '2,870 PLN',
@@ -4085,12 +4196,12 @@ const translations = {
   'Partner biznesowy (stała współpraca)': 'Business partner (ongoing cooperation)',
   'Diagnoza biznesowa': 'Business diagnosis',
   'Inne': 'Other',
-  'Opisz swój problem lub wyzwanie': 'Describe your problem or challenge',
+  'Opisz swój problem lub wyzwanie (opcjonalnie)': 'Describe your problem or challenge (optional)',
   'Wyślij zgłoszenie': 'Send inquiry',
   'Strategia · Marketing · Sprzedaż · Automatyzacja · Doradztwo dla firm, które chcą działać spokojniej': 'Strategy · Marketing · Sales · Automation · Consulting for companies that want to operate with more clarity',
   '© 2026 HANDYBIZ. Wszelkie prawa zastrzeżone.': '© 2026 HANDYBIZ. All rights reserved.',
   'Najpierw poznajemy Twoją firmę, cele i miejsca, w których dziś tracisz czas, klientów albo pieniądze. Dopiero potem dobieramy działania, które mają największy sens: od strony www i sprzedaży, przez automatyzację procesów, po doradztwo biznesowe i wsparcie księgowe.': 'First, we get to know your company, goals and the areas where you currently lose time, customers or money. Only then do we choose the actions that make the most sense: from websites and sales to process automation, business consulting and accounting support.',
-  'Układamy markę, komunikację i działania promocyjne tak, żeby firma była widoczna, spójna i budowała relację z klientem. Marketing ma nie tylko przyciągać uwagę, ale też wzmacniać zaufanie i ułatwiać decyzję o kontakcie.': 'We organize the brand, communication and promotional activities so the company is visible, consistent and builds customer relationships. Marketing should not only attract attention, but also strengthen trust and make it easier to reach out.',
+  'Układamy markę, komunikację i działania promocyjne tak, żeby firma była widoczna, spójna i budowała relację z klientem. Marketing ma nie tylko przyciągać uwagę, ale też wzmacniać zaufanie i ułatwiać decyzję o kontakcie. Możemy też prowadzić opiekę nad stroną www oraz profilami Facebook i Instagram.': 'We organize the brand, communication and promotional activities so the company is visible, consistent and builds customer relationships. Marketing should not only attract attention, but also strengthen trust and make it easier to reach out. We can also take care of your website and Facebook and Instagram profiles.',
   'Pomagamy wybrać model sprzedaży dopasowany do branży, klienta i etapu firmy. Porządkujemy sposób prowadzenia rozmów, ofertowania i podejmowania decyzji sprzedażowych.': 'We help choose a sales model suited to the industry, customer and company stage. We organize how conversations, offers and sales decisions are handled.',
   'Szukamy rozwiązań, które realnie ułatwią pracę w Twoim obecnym systemie. Tworzymy i łączymy narzędzia pod konkretny proces, zamiast dokładać kolejne przypadkowe aplikacje.': 'We look for solutions that genuinely make work easier inside your current system. We create and connect tools around a specific process instead of adding more random apps.',
   'Oddzielamy decyzje biznesowe od spraw księgowych, bo każda z tych rzeczy wymaga innej odpowiedzialności. Ty dostajesz jasny kierunek działania i dostęp do właściwych specjalistów.': 'We separate business decisions from accounting matters because each requires a different kind of responsibility. You get a clear direction and access to the right specialists.',
@@ -4120,9 +4231,9 @@ const translations = {
   'Pierwsza konsultacja 0 zł. Jeśli po spotkaniu będzie potrzebny dalszy zakres, ustalimy go dopiero po poznaniu sytuacji.': 'First consultation is free. If further scope is needed after the meeting, we define it only after understanding the situation.',
   'Marketing nie powinien być zbiorem przypadkowych postów, reklam i grafik. Powinien jasno pokazywać, kim jest firma, komu pomaga i dlaczego klient może jej zaufać.': 'Marketing should not be a collection of random posts, ads and graphics. It should clearly show who the company is, who it helps and why customers can trust it.',
   'Porządkujemy strategię marki, komunikację, treści, kampanie i materiały wizualne tak, żeby pracowały w jednym kierunku.': 'We organize brand strategy, communication, content, campaigns and visuals so they all work in one direction.',
-  'Możemy zacząć od strony www, identyfikacji, contentu, wideo, kampanii reklamowej albo pełnego planu działań marketingowych.': 'We can start with a website, identity, content, video, an advertising campaign or a full marketing action plan.',
+  'Możemy zacząć od strony www, identyfikacji, contentu, wideo, kampanii reklamowej, opieki nad social mediami albo pełnego planu działań marketingowych.': 'We can start with a website, identity, content, video, an advertising campaign, social media care or a full marketing action plan.',
   'Efekt: marketing staje się spójny, mierzalny i bardziej zrozumiały dla klienta.': 'Result: marketing becomes consistent, measurable and easier for the customer to understand.',
-  'Wycena po rozmowie. Możemy zacząć od małego zakresu albo pełnej obsługi.': 'Quote after a conversation. We can start with a small scope or full support.',
+  'Wycena po rozmowie. Możemy zacząć od małego zakresu, pełnej obsługi albo wycenić indywidualnie tylko to, czego aktualnie potrzebujesz. Wystarczy napisać maila.': 'Quote after a conversation. We can start with a small scope, full support or prepare an individual quote only for what you currently need. Just send us an email.',
   'W wielu firmach problemem nie jest brak narzędzi, tylko brak połączenia między nimi. Dane są w kilku miejscach, raporty w Excelu, a ważne sprawy zależą od pamięci jednej osoby.': 'In many companies, the problem is not a lack of tools, but the lack of connection between them. Data sits in several places, reports are in Excel and important matters depend on one person’s memory.',
   'Szukamy rozwiązań, które ułatwią pracę w Twoim aktualnym systemie, zamiast wymieniać wszystko od zera.': 'We look for solutions that make work easier in your current system instead of replacing everything from scratch.',
   'Tworzymy automatyzacje, integracje, dashboardy, kalkulatory, formularze, aplikacje webowe i mobilne, strony www oraz techniczne zaplecze dla małych firm.': 'We create automations, integrations, dashboards, calculators, forms, web and mobile apps, websites and technical infrastructure for small companies.',
@@ -4135,22 +4246,38 @@ const translations = {
   'Efekt: masz pod ręką zespół, który zna Twoją firmę, pomaga podejmować lepsze decyzje i dowozi konkretne działania wtedy, kiedy są naprawdę potrzebne.': 'Result: you have a team close at hand that knows your company, helps you make better decisions and delivers concrete actions when they are truly needed.',
   'Bestseller': 'Bestseller',
   'Ceny są orientacyjne i mogą ulec zmianie w zależności od wymagań klienta, zakresu współpracy oraz ewentualnej dodatkowej pracy po naszej stronie.': 'Prices are indicative and may change depending on client requirements, cooperation scope and any additional work required on our side.',
+  'Nie kupuj "kota w worku".': 'Do not buy a pig in a poke.',
+  'Otrzymaj darmowy podgląd strony, zanim zdecydujesz się na współpracę.': 'Get a free website preview before you decide to work with us.',
   'Strona internetowa powinna pomagać w sprzedaży, a nie tylko istnieć w sieci. Klient, który trafia na Twoją firmę, musi szybko zrozumieć, co oferujesz, dlaczego warto wybrać właśnie Ciebie i jak może zrobić kolejny krok.': 'A website should support sales, not just exist online. A customer who finds your company should quickly understand what you offer, why they should choose you and how to take the next step.',
   'Nawet jeśli masz już stronę, warto sprawdzić, czy naprawdę pracuje na Twój biznes.': 'Even if you already have a website, it is worth checking whether it truly works for your business.',
   'Często problemem nie jest sam wygląd, tylko niejasna oferta, słabe prowadzenie klienta, brak wygodnego kontaktu albo strona, która nie buduje zaufania.': 'Often, the problem is not the design itself, but an unclear offer, weak customer guidance, inconvenient contact or a website that does not build trust.',
   'Dobrze przygotowana obecność online daje więcej niż estetyczny projekt. Pomaga uporządkować komunikację, zwiększa wiarygodność firmy, ułatwia pozyskiwanie zapytań i sprawia, że klient szybciej podejmuje decyzję o kontakcie.': 'A well-prepared online presence gives more than an attractive design. It organizes communication, increases credibility, helps generate inquiries and makes it easier for customers to decide to contact you.',
   'Trudno znaleźć firmę, która zrobi to naprawdę dobrze, pod konkretny biznes i jego klientów, a nie według gotowego schematu. Dlatego od tego jesteśmy my: łączymy stronę, domenę, firmowy mail, formularz i podstawową automatyzację w rozwiązanie, które ma wspierać sprzedaż od pierwszego dnia.': 'It is hard to find a company that does this truly well for a specific business and its customers, not from a generic template. That is where we come in: we connect the website, domain, business email, form and basic automation into a solution designed to support sales from day one.',
+  'Nie potrzebujesz całego pakietu?': 'Do you not need the full package?',
+  'Możemy wycenić indywidualnie jedną konkretną rzecz, np. samą stronę www, poprawę obecnej strony, formularz albo mail firmowy. Napisz do nas, a przygotujemy ofertę dopasowaną do tego, czego faktycznie potrzebujesz.': 'We can quote one specific thing individually, such as only a website, improvements to your current site, a form or business email. Write to us and we will prepare an offer matched to what you actually need.',
   'Dla małych i średnich firm, które chcą profesjonalnie zaprezentować ofertę i ułatwić klientom szybki kontakt': 'For small and medium-sized companies that want to present their offer professionally and make it easy for customers to get in touch',
   'Dobry wybór także dla osób, które chcą odświeżyć swoją aktualną stronę internetową': 'Also a good choice for people who want to refresh their current website',
   'Profesjonalna strona www dopasowana do docelowego klienta': 'A professional website tailored to the target customer',
   'Uporządkowana oferta, opis usług i najważniejsze informacje': 'Organized offer, service descriptions and key information',
   'Spójny wygląd, kolorystyka i podstawowa komunikacja marketingowa': 'Consistent look, colors and basic marketing communication',
-  'Domena internetowa na okres roku z możliwością przedłużenia w niższej cenie przy wyborze dłuższego okresu': 'Domain for one year with the option to renew at a lower price when choosing a longer period',
-  'Możliwość stworzenia i ustawienia firmowego maila w domenie, np. jankowalski@twojanazwa.pl': 'Option to create and set up business email in your domain, e.g. john@yourname.com',
+  'Domena 5 lat w cenie': 'Domain for 5 years included',
+  'Mail firmowy': 'Business email',
+  'Darmowy podgląd strony': 'Free website preview',
+  'Rozbudowana strona': 'Expanded website',
+  'Większa automatyzacja': 'Larger automation',
+  'Serwer dopasowany do projektu': 'Server matched to the project',
+  'CRM lub panel': 'CRM or dashboard',
+  'Reklama startowa': 'Starter advertising',
+  'Darmowy podgląd': 'Free preview',
+  'Mini automatyzacja': 'Mini automation',
+  'Reklama start': 'Starter ads',
+  'Domena internetowa na 5 lat w cenie pakietu, z możliwością dalszego przedłużenia w najniższych możliwych cenach': 'Domain for 5 years included in the package, with the option to renew later at the lowest possible prices',
+  'Mail firmowy dla Twojej firmy: możliwość stworzenia i ustawienia adresu w domenie, np. kontakt@twojanazwa.pl': 'Business email for your company: option to create and set up an address in your domain, e.g. contact@yourname.com',
   'Wybór platformy pocztowej: od bezpłatnej skrzynki po płatne rozwiązanie dopasowane do preferencji firmy': 'Choice of email platform: from a free mailbox to a paid solution matched to company preferences',
+  'Wizytówka Google dla firmy, jeśli będzie potrzebna do lepszej widoczności lokalnej': 'Google Business Profile for the company if needed for better local visibility',
   'Utworzenie stopki (podpisu) w HTML, przygotowanej tak, aby pasowała do różnych skrzynek mailowych i nie była ucinana': 'Creation of an HTML email signature prepared to work across different mailboxes without being cut off',
   'Dopracowanie strony po starcie i do 1 edycji w ciągu 12 miesięcy': 'Website refinement after launch and up to 1 edit within 12 months',
-  'Formularz zgłoszeniowy oraz powiadomienia na maila i telefon': 'Inquiry form and email/phone notifications',
+  'Mini automatyzacja: formularz zgłoszeniowy oraz powiadomienia na maila i telefon, żeby szybciej reagować na zapytania': 'Mini automation: inquiry form plus email and phone notifications so you can respond to inquiries faster',
   'Wszystko z pakietu Handy Basic': 'Everything from Handy Basic',
   'Dla firmy, która po uruchomieniu strony chce od razu zacząć docierać do klientów': 'For a company that wants to start reaching customers right after launch',
   'Reklama strony przez 1 miesiąc nastawiona na pierwsze zapytania, z możliwością zwiększenia budżetu. Klient sam decyduje, ile chce zainwestować, zachowując pełną wygodę i kontrolę nad wydatkami': 'Website advertising for 1 month focused on first inquiries, with the option to increase the budget. The client decides how much to invest, keeping full convenience and control over spending.',
@@ -4169,6 +4296,11 @@ const translations = {
   'Konsultacja rozwojowa po uruchomieniu: priorytety zmian, kolejność działań i rekomendacje na dalszy etap': 'Post-launch growth consultation: change priorities, action order and recommendations for the next stage',
   'Na bezpłatnej konsultacji porządkujemy sytuację, wskazujemy możliwe kierunki i pomagamy wybrać pierwszy rozsądny krok.': 'During a free consultation, we organize the situation, point out possible directions and help choose the first reasonable step.',
   'Opisz krótko, co chcesz uporządkować: marketing, sprzedaż, procesy, stronę www, start firmy albo konkretny problem. Odpowiemy spokojnie i podpowiemy, od czego zacząć.': 'Briefly describe what you want to organize: marketing, sales, processes, a website, starting a company or a specific problem. We will respond calmly and suggest where to start.',
+  'Dane z formularza wykorzystamy wyłącznie do kontaktu i przedstawienia oferty. Szczegóły:': 'We use form data only to contact you and present an offer. Details:',
+  'Wysyłając zgłoszenie, akceptujesz': 'By sending the inquiry, you accept the',
+  'Polityka prywatności HANDYBIZ': 'HANDYBIZ privacy policy',
+  'Politykę prywatności HANDYBIZ': 'HANDYBIZ privacy policy',
+  'Polityka prywatności': 'Privacy policy',
   'Najpierw rozmawiamy i poznajemy sytuację. Dopiero później proponujemy zakres, wycenę albo osobę, która najlepiej pomoże.': 'First, we talk and understand the situation. Only then do we propose the scope, quote or person who can help best.',
   'Wysyłanie…': 'Sending...',
   '✓ Wiadomość wysłana! Odezwiemy się w ciągu 24 godzin.': '✓ Message sent! We will get back to you within 24 hours.',
@@ -4198,6 +4330,7 @@ const attributeTranslations = {
     'Wybierz slajd historii': 'Choose story slide',
     'Problemy klienta': 'Client problems',
     'Jak pomaga HANDYBIZ': 'How HANDYBIZ helps',
+    'Linki prawne': 'Legal links',
   },
 };
 
@@ -4445,13 +4578,6 @@ enableSwipe(storyTrack?.closest('.story-slider'), {
 
 
 /* ── TECHNICAL PACKAGE TIERS ── */
-const pkgDetail = document.getElementById('pkg-tier-detail');
-const pkgDetailName = document.getElementById('pkg-detail-name');
-const pkgDetailPrice = document.getElementById('pkg-detail-price');
-const pkgDetailPeriod = document.getElementById('pkg-detail-period');
-const pkgDetailList = document.getElementById('pkg-detail-list');
-const pkgDetailClose = document.querySelector('.pkg-detail-close');
-const pkgTiers = document.querySelectorAll('#pakiety .bp-tier');
 const pkgSlider = document.getElementById('pkg-slider');
 const pkgSlideButtons = document.querySelectorAll('[data-pkg-slide]');
 
@@ -4473,53 +4599,6 @@ enableSwipe(pkgSlider, {
   onNext: () => scrollPkgSlider(1),
   onPrev: () => scrollPkgSlider(-1),
   threshold: 38,
-});
-
-pkgTiers.forEach(tier => {
-  const selectPkgTier = () => {
-    const isSelected = tier.classList.contains('selected');
-    pkgTiers.forEach(el => {
-      el.classList.remove('selected');
-    });
-
-    if (isSelected) {
-      pkgDetail?.classList.remove('open');
-      return;
-    }
-
-    tier.classList.add('selected');
-    if (!pkgDetail) return;
-
-    pkgDetailName.textContent = tier.querySelector('.bp-tier-name')?.textContent || '';
-    pkgDetailPrice.textContent = tier.querySelector('.bp-tier-price')?.textContent || '';
-    pkgDetailPeriod.textContent = tier.querySelector('.bp-tier-period')?.textContent || '';
-    pkgDetailList.innerHTML = '';
-    tier.querySelectorAll('.bp-tier-list li').forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = item.textContent;
-      pkgDetailList.appendChild(li);
-    });
-    pkgDetail.classList.add('open');
-  };
-
-  tier.addEventListener('click', selectPkgTier);
-  tier.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-      e.stopPropagation();
-    });
-  });
-  tier.addEventListener('keydown', e => {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    e.preventDefault();
-    selectPkgTier();
-  });
-});
-
-pkgDetailClose?.addEventListener('click', () => {
-  pkgTiers.forEach(el => {
-    el.classList.remove('selected');
-  });
-  pkgDetail?.classList.remove('open');
 });
 
 /* ── FORM ── */

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polityka prywatności | HANDYBIZ</title>
+  <meta name="description" content="Polityka prywatności HANDYBIZ: informacje o przetwarzaniu danych osobowych, formularzu kontaktowym, prawach użytkownika i zasadach RODO.">
+  <link rel="canonical" href="https://handybiz.pl/polityka-prywatnosci.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080808;
+      --bg-2: #0f0f0f;
+      --bg-card: #111111;
+      --border: rgba(255,255,255,0.08);
+      --border-h: rgba(255,255,255,0.14);
+      --text: #ffffff;
+      --muted: #a8a8a8;
+      --dim: #707070;
+      --accent: #c8a96e;
+      --accent-d: rgba(200,169,110,0.12);
+      --r: 12px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: 'Inter', system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(200,169,110,0.12), transparent 32rem),
+        linear-gradient(180deg, #080808 0%, #0f0f0f 45%, #080808 100%);
+      color: var(--text);
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      padding: 34px 32px 64px;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0 52px;
+    }
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .brand span { color: var(--accent); }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid rgba(200,169,110,0.34);
+      border-radius: 8px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      background: rgba(200,169,110,0.055);
+    }
+    .back-link:hover { background: rgba(200,169,110,0.12); text-decoration: none; }
+    header {
+      padding: 34px 0 54px;
+      border-bottom: 1px solid var(--border);
+    }
+    .eyebrow {
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      font-size: clamp(2.25rem, 7vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+    .lead {
+      max-width: 760px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+    .updated {
+      margin-top: 22px;
+      color: var(--dim);
+      font-size: 0.85rem;
+    }
+    .notice {
+      margin-top: 30px;
+      padding: 20px 22px;
+      border: 1px solid rgba(200,169,110,0.24);
+      border-radius: var(--r);
+      background: rgba(200,169,110,0.07);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.92rem;
+    }
+    main { padding-top: 34px; }
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0 0 32px;
+    }
+    .toc a {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.025);
+      font-size: 0.82rem;
+    }
+    .toc a:hover {
+      border-color: rgba(200,169,110,0.38);
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0 0 34px;
+    }
+    .summary-card {
+      min-height: 132px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(200,169,110,0.11), transparent 70%),
+        rgba(255,255,255,0.026);
+    }
+    .summary-kicker {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .summary-card p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      line-height: 1.62;
+    }
+    section {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+    }
+    h2 {
+      margin-bottom: 16px;
+      font-size: clamp(1.35rem, 3vw, 2.1rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 22px 0 10px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    p, li { color: var(--muted); font-size: 0.96rem; }
+    p + p { margin-top: 12px; }
+    ul { list-style: none; display: grid; gap: 9px; margin-top: 12px; }
+    li { position: relative; padding-left: 18px; }
+    li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.82em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .table-wrap {
+      margin-top: 18px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      background: rgba(255,255,255,0.025);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+    th, td {
+      padding: 15px 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.9rem;
+    }
+    th {
+      color: var(--text);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.03);
+    }
+    td { color: var(--muted); }
+    tr:last-child td { border-bottom: 0; }
+    .legal-box {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid rgba(200,169,110,0.24);
+      border-radius: var(--r);
+      background: rgba(200,169,110,0.06);
+    }
+    .legal-box p { color: rgba(255,255,255,0.84); }
+    .footer {
+      margin-top: 24px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      color: var(--dim);
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 760px) {
+      .page { padding: 24px 18px 48px; }
+      .topbar { align-items: flex-start; flex-direction: column; padding-bottom: 34px; }
+      header { padding-top: 18px; }
+      .summary-grid { grid-template-columns: 1fr; }
+      section { padding: 28px 0; }
+      .notice { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="topbar" aria-label="Nawigacja strony">
+      <a class="brand" href="index.html" aria-label="HANDYBIZ strona główna">HANDY<span>BIZ</span></a>
+      <a class="back-link" href="index.html#kontakt">Wróć do kontaktu</a>
+    </nav>
+
+    <header>
+      <div class="eyebrow">RODO · dane klientów · prywatność</div>
+      <h1>Polityka prywatności HANDYBIZ</h1>
+      <p class="lead">
+        Dane przekazane przez formularz kontaktowy lub e-mail przetwarzamy wyłącznie po to, aby skontaktować się z Tobą, odpowiedzieć na zgłoszenie i przedstawić ofertę usług HANDYBIZ.
+      </p>
+      <p class="updated">Ostatnia aktualizacja: 13 maja 2026 r.</p>
+      <p class="notice">
+        Nie sprzedajemy danych i nie udostępniamy ich w celach reklamowych innym podmiotom.
+      </p>
+    </header>
+
+    <main>
+      <div class="toc" aria-label="Spis treści">
+        <a href="#administrator">Administrator</a>
+        <a href="#dane">Zakres danych</a>
+        <a href="#cele">Cele</a>
+        <a href="#podstawy">Podstawy prawne</a>
+        <a href="#marketing">Marketing</a>
+        <a href="#odbiorcy">Odbiorcy</a>
+        <a href="#czas">Jak długo</a>
+        <a href="#prawa">Twoje prawa</a>
+        <a href="#zasady">Zasady</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+
+      <div class="summary-grid" aria-label="Najważniejsze zasady prywatności">
+        <div class="summary-card">
+          <div class="summary-kicker">Cel</div>
+          <p>Dane służą do kontaktu, obsługi zgłoszenia, przygotowania odpowiedzi i przedstawienia oferty HANDYBIZ.</p>
+        </div>
+        <div class="summary-card">
+          <div class="summary-kicker">Marketing</div>
+          <p>Marketing dotyczy wyłącznie HANDYBIZ i jest prowadzony w granicach prawa oraz z możliwością sprzeciwu.</p>
+        </div>
+        <div class="summary-card">
+          <div class="summary-kicker">Bez sprzedaży</div>
+          <p>Nie sprzedajemy danych i nie przekazujemy ich innym firmom do prowadzenia ich własnego marketingu.</p>
+        </div>
+      </div>
+
+      <section id="administrator">
+        <h2>1. Administrator danych</h2>
+        <p>
+          Administratorem danych osobowych jest HANDYBIZ. W każdej sprawie dotyczącej przetwarzania danych osobowych możesz skontaktować się przez adres:
+          <a href="mailto:hello@handybiz.pl">hello@handybiz.pl</a>.
+        </p>
+      </section>
+
+      <section id="dane">
+        <h2>2. Jakie dane przetwarzamy</h2>
+        <p>Przetwarzamy dane, które podajesz dobrowolnie podczas kontaktu z HANDYBIZ:</p>
+        <ul>
+          <li>imię i nazwisko,</li>
+          <li>adres e-mail,</li>
+          <li>numer telefonu, jeżeli go podasz,</li>
+          <li>nazwę firmy lub marki, jeżeli ją podasz,</li>
+          <li>temat zgłoszenia, treść wiadomości i informacje potrzebne do przygotowania odpowiedzi lub oferty,</li>
+          <li>podstawowe dane techniczne związane z korzystaniem ze strony, jeżeli są niezbędne do jej prawidłowego działania i bezpieczeństwa.</li>
+        </ul>
+        <p>
+          Nie wymagamy podawania danych szczególnych kategorii, takich jak dane o zdrowiu, poglądy polityczne, przekonania religijne czy inne dane wrażliwe. Nie wpisuj ich w formularzu, jeżeli nie są konieczne do opisania sprawy.
+        </p>
+      </section>
+
+      <section id="cele">
+        <h2>3. Cele przetwarzania danych</h2>
+        <p>Dane osobowe przetwarzamy wyłącznie w następujących celach:</p>
+        <ul>
+          <li>obsługa zgłoszenia wysłanego przez formularz kontaktowy lub e-mail,</li>
+          <li>kontakt zwrotny w sprawie zapytania, konsultacji lub możliwej współpracy,</li>
+          <li>przedstawienie informacji o usługach HANDYBIZ oraz przygotowanie indywidualnej oferty,</li>
+          <li>marketing bezpośredni własnych usług, produktów, materiałów i strony HANDYBIZ,</li>
+          <li>prowadzenie korespondencji związanej z przedstawioną ofertą,</li>
+          <li>zapewnienie bezpieczeństwa i poprawnego działania strony,</li>
+          <li>ustalenie, dochodzenie lub obrona ewentualnych roszczeń.</li>
+        </ul>
+      </section>
+
+      <section id="podstawy">
+        <h2>4. Podstawy prawne przetwarzania</h2>
+        <p>Dane przetwarzamy zgodnie z RODO na poniższych podstawach:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Zakres działania</th>
+                <th>Podstawa prawna</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Kontakt zwrotny, obsługa zapytania, rozmowa przed współpracą i przygotowanie oferty na Twoje żądanie.</td>
+                <td>art. 6 ust. 1 lit. b RODO</td>
+              </tr>
+              <tr>
+                <td>Obsługa korespondencji, zabezpieczenie strony, organizacja pracy oraz ochrona przed roszczeniami.</td>
+                <td>art. 6 ust. 1 lit. f RODO</td>
+              </tr>
+              <tr>
+                <td>Marketing bezpośredni własnych usług, produktów, materiałów i strony HANDYBIZ. W przypadku kanałów komunikacji, dla których przepisy wymagają dodatkowej zgody komunikacyjnej, kontakt marketingowy może być prowadzony po jej uzyskaniu.</td>
+                <td>art. 6 ust. 1 lit. f RODO, a w zakresie zgody wymaganej dla danego kanału komunikacji także art. 6 ust. 1 lit. a RODO</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="marketing">
+        <h2>5. Marketing własny HANDYBIZ</h2>
+        <p>
+          Dane mogą być wykorzystywane do marketingu bezpośredniego własnych usług, produktów, materiałów i strony HANDYBIZ. Taki marketing może obejmować informacje o ofercie, konsultacjach, nowych materiałach, promocjach, zmianach na stronie lub działaniach edukacyjno-promocyjnych HANDYBIZ.
+        </p>
+        <p>
+          Dane używane do marketingu HANDYBIZ nie są sprzedawane ani przekazywane innym podmiotom w celu prowadzenia ich własnych działań reklamowych. Służą wyłącznie do promocji HANDYBIZ, naszych produktów, usług, materiałów i strony internetowej.
+        </p>
+        <div class="legal-box">
+          <p>
+            Samo wysłanie formularza nie oznacza zgody na każdy kanał komunikacji marketingowej. Jeżeli dla danego kanału kontaktu przepisy wymagają zgody, kontakt marketingowy może być prowadzony po jej uzyskaniu. Możesz też w każdej chwili wnieść sprzeciw wobec marketingu bezpośredniego lub wycofać zgodę, pisząc na <a href="mailto:hello@handybiz.pl">hello@handybiz.pl</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="odbiorcy">
+        <h2>6. Odbiorcy danych</h2>
+        <p>
+          Dane mogą być przekazywane wyłącznie podmiotom, które wspierają HANDYBIZ w obsłudze strony, poczty elektronicznej, formularza kontaktowego, narzędzi technicznych, bezpieczeństwa, księgowości, obsługi prawnej lub organizacji pracy.
+        </p>
+        <p>
+          Dane mogą być również udostępnione organom publicznym lub uprawnionym podmiotom, jeżeli wymagają tego obowiązujące przepisy prawa. Nie sprzedajemy danych osobowych i nie przekazujemy ich innym podmiotom w celu prowadzenia ich własnego marketingu.
+        </p>
+        <p>
+          Jeżeli w związku z używanymi narzędziami technicznymi dane miałyby być przekazywane poza Europejski Obszar Gospodarczy, odbywa się to z zastosowaniem zabezpieczeń wymaganych przez RODO.
+        </p>
+      </section>
+
+      <section id="czas">
+        <h2>7. Jak długo przechowujemy dane</h2>
+        <p>
+          Dane z formularza i korespondencji przechowujemy do czasu, w którym są potrzebne do obsługi zgłoszenia, przedstawienia oferty, prowadzenia dalszej rozmowy, promocji usług HANDYBIZ, ochrony przed roszczeniami lub wykazania przebiegu kontaktu. Oceny, czy dane są nadal potrzebne do tych celów, dokonuje HANDYBIZ.
+        </p>
+        <p>
+          Jeżeli nie chcesz, abyśmy dalej przetwarzali Twoje dane w danym celu, możesz napisać na <a href="mailto:hello@handybiz.pl">hello@handybiz.pl</a>. Jeżeli przetwarzanie odbywa się na podstawie zgody, możesz ją wycofać w każdej chwili. Po takim zgłoszeniu dane zostaną usunięte lub ograniczone, chyba że istnieje inna zgodna z prawem podstawa ich dalszego przechowywania.
+        </p>
+      </section>
+
+      <section id="prawa">
+        <h2>8. Twoje prawa</h2>
+        <p>Masz prawo do:</p>
+        <ul>
+          <li>dostępu do swoich danych,</li>
+          <li>sprostowania danych,</li>
+          <li>usunięcia danych,</li>
+          <li>ograniczenia przetwarzania,</li>
+          <li>przenoszenia danych, jeżeli ma to zastosowanie,</li>
+          <li>wniesienia sprzeciwu wobec przetwarzania danych,</li>
+          <li>wycofania zgody, jeżeli dane są przetwarzane na podstawie zgody.</li>
+        </ul>
+        <p>
+          Aby skorzystać z praw, napisz na <a href="mailto:hello@handybiz.pl">hello@handybiz.pl</a>.
+        </p>
+        <p>Przysługuje Ci także prawo wniesienia skargi do właściwego organu nadzorczego.</p>
+      </section>
+
+      <section id="zasady">
+        <h2>9. Dobrowolność i brak profilowania</h2>
+        <p>
+          Podanie danych w formularzu jest dobrowolne, ale niezbędne do obsługi zgłoszenia, kontaktu zwrotnego i przedstawienia oferty. Brak podania danych kontaktowych może uniemożliwić odpowiedź.
+        </p>
+        <p>
+          HANDYBIZ nie podejmuje wobec użytkowników decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu danych i nie prowadzi profilowania, które wywoływałoby wobec użytkownika skutki prawne lub podobnie istotnie na niego wpływało.
+        </p>
+      </section>
+
+      <section id="kontakt">
+        <h2>10. Kontakt</h2>
+        <p>
+          W każdej sprawie dotyczącej danych osobowych napisz na:
+          <a href="mailto:hello@handybiz.pl">hello@handybiz.pl</a>.
+        </p>
+        <p>
+          Polityka prywatności może zostać zaktualizowana, jeżeli zmieni się sposób działania strony, zakres przetwarzania danych albo obowiązujące przepisy.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 HANDYBIZ. Wszelkie prawa zastrzeżone.</span>
+      <a href="index.html">Strona główna</a>
+    </footer>
+  </div>
+</body>
+</html>
