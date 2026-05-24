@@ -1960,6 +1960,9 @@
       background: rgba(200,169,110,0.82);
       box-shadow: 0 0 10px rgba(200,169,110,0.34);
     }
+    .pkg-swipe-hint {
+      display: none;
+    }
     #pakiety .pro-tier .bp-tier-price {
       font-size: 1.28rem;
       letter-spacing: -0.02em;
@@ -2607,12 +2610,12 @@
       .hero { padding: 120px 18px 90px; }
       .hero-content { width: 100%; }
       .hero-badge {
-        font-size: 0.62rem;
-        padding: 7px 14px;
-        letter-spacing: 0.08em;
-        white-space: normal;
+        font-size: clamp(0.52rem, 2.25vw, 0.62rem);
+        padding: 7px 12px;
+        letter-spacing: 0.045em;
+        white-space: nowrap;
         text-align: center;
-        line-height: 1.4;
+        line-height: 1.2;
         max-width: 100%;
       }
       .hero-brand {
@@ -2720,8 +2723,8 @@
         bottom: calc(100% + 12px);
       }
       .hero-badge {
-        font-size: 0.58rem;
-        padding: 6px 12px;
+        font-size: clamp(0.5rem, 2.35vw, 0.58rem);
+        padding: 6px 10px;
         margin-bottom: 32px;
       }
       .service-showcase-title { font-size: clamp(1.4rem, 6.5vw, 2rem); }
@@ -2779,6 +2782,90 @@
       .bp-tier-detail { padding: 22px 18px; }
       .bp-tier { padding: 26px 22px; }
       .bp-tier-price { font-size: 1.4rem; }
+      #pakiety .oblock-right {
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow: visible;
+      }
+      #pakiety .pkg-slider-wrap {
+        padding: 0;
+        overflow: visible;
+      }
+      #pakiety .bp-tiers {
+        gap: 12px;
+        padding: 0 0 12px;
+        scroll-padding-inline: 0;
+      }
+      #pakiety .bp-tier {
+        flex-basis: 100%;
+        width: 100%;
+        padding: 30px clamp(24px, 7vw, 34px);
+      }
+      #pakiety .bp-tier-list li {
+        font-size: 0.78rem;
+        line-height: 1.52;
+      }
+      #pakiety .bp-tier-badge {
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.35;
+      }
+      #pakiety .pkg-highlights {
+        gap: 8px;
+      }
+      #pakiety .pkg-highlight {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: normal;
+      }
+      #pakiety .pkg-slider-btn {
+        display: none !important;
+      }
+      #pakiety .bp-tier:first-child .pkg-swipe-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        width: fit-content;
+        max-width: 100%;
+        margin: -4px 0 18px;
+        padding: 8px 11px;
+        border: 1px solid rgba(200,169,110,0.22);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.035);
+        color: rgba(246,246,246,0.72);
+        font-size: 0.64rem;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+      #pakiety .bp-tier:first-child .pkg-swipe-hint::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(200,169,110,0.45);
+        background:
+          radial-gradient(circle at 50% 50%, rgba(200,169,110,0.8) 0 2px, transparent 3px),
+          rgba(200,169,110,0.08);
+        animation: swipeDotRight 1.65s ease-in-out infinite;
+      }
+      #pakiety .bp-tier:first-child .pkg-swipe-hint::after {
+        content: "›";
+        color: var(--accent);
+        font-size: 1.05rem;
+        line-height: 1;
+        animation: swipeArrowRight 1.65s ease-in-out infinite;
+      }
+      #pakiety .oblock-right > .btn {
+        min-height: 46px;
+        width: 100%;
+        padding: 12px 14px;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+      }
       footer { gap: 14px; padding: 32px 16px; }
       .footer-copy { font-size: 0.7rem; }
       @keyframes heroBrandIntro {
@@ -2809,7 +2896,7 @@
         letter-spacing: 0.02em;
       }
       .hero-welcome { font-size: 1rem; bottom: calc(100% + 10px); }
-      .hero-badge { font-size: 0.55rem; padding: 5px 10px; letter-spacing: 0.06em; }
+      .hero-badge { font-size: clamp(0.47rem, 2.25vw, 0.55rem); padding: 5px 8px; letter-spacing: 0.035em; }
       .hero-motto { font-size: 0.88rem; }
       .hero-motto-2 { font-size: 0.82rem; }
       .hero-desc { font-size: 0.85rem; }
@@ -2823,6 +2910,26 @@
       .story-title { font-size: 1.4rem; }
       .fcta-box { padding: 36px 16px; }
       .bp-tier { padding: 22px 18px; }
+      #pakiety .oblock-right {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      #pakiety .bp-tier {
+        padding: 28px 24px;
+      }
+      #pakiety .pkg-slider-btn {
+        display: none !important;
+      }
+    }
+
+    @keyframes swipeDotRight {
+      0%, 100% { transform: translateX(0); opacity: 0.55; }
+      45% { transform: translateX(9px); opacity: 1; }
+    }
+
+    @keyframes swipeArrowRight {
+      0%, 100% { transform: translateX(0); opacity: 0.45; }
+      45% { transform: translateX(5px); opacity: 1; }
     }
 
     /* ════════════════════════════════════════════════════════════
@@ -2928,7 +3035,7 @@
   <!-- ══ HERO ══ -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">Consulting · Marketing · Automatyzacja · Strony WWW</div>
+      <div class="hero-badge">Consulting · Marketing · Automatyzacja · Strony&nbsp;WWW</div>
 
       <div class="hero-brand-group">
         <div class="hero-welcome" aria-hidden="true">Witaj w</div>
@@ -3469,6 +3576,7 @@
                       <span class="pkg-highlight">Darmowy podgląd strony</span>
                       <span class="pkg-highlight">Mini automatyzacja</span>
                     </div>
+                    <div class="pkg-swipe-hint" aria-hidden="true">Przesuń w prawo</div>
                     <ul class="bp-tier-list">
                       <li>Dla małych i średnich firm, które chcą profesjonalnie zaprezentować ofertę i ułatwić klientom szybki kontakt</li>
                       <li>Dobry wybór także dla osób, które chcą odświeżyć swoją aktualną stronę internetową</li>
@@ -4584,7 +4692,8 @@ const pkgSlideButtons = document.querySelectorAll('[data-pkg-slide]');
 function scrollPkgSlider(direction) {
   if (!pkgSlider) return;
   const slide = pkgSlider.querySelector('.bp-tier');
-  const slideWidth = slide ? slide.getBoundingClientRect().width + 16 : pkgSlider.clientWidth;
+  const gap = parseFloat(getComputedStyle(pkgSlider).columnGap || getComputedStyle(pkgSlider).gap) || 16;
+  const slideWidth = slide ? slide.getBoundingClientRect().width + gap : pkgSlider.clientWidth;
   pkgSlider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
 }
 
